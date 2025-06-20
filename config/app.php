@@ -120,6 +120,9 @@ return [
     | will not be safe. Please do this before deploying an application!
     |
     */
+    'locale' => 'en',        // اللغة الافتراضية
+    'fallback_locale' => 'en',
+
 
     'key' => env('APP_KEY'),
 

@@ -29,8 +29,8 @@
                         <div class="card-body">
                             <div class="col-md-12">
 
-                                <h2 class="mb-5" style="text-align: center">BUKTI PEMBAYARAN</h2>
-                                <h4 class="mt-2">PT. Hotel Cakra</h4>
+                                <h2 class="mb-5" style="text-align: center">PROOF OF PAYMENT</h2>
+                                <h4 class="mt-2">PT. Hotel FRM </h4>
                                 <div class="d-flex justify-content-between">
                                     <h6>Cileungsi Kidul, Kec. Cileungsi, <br> Kabupaten Bogor, Jawa Barat 16820</h6>
                                     <h6>INVOICE #{{ $pay->invoice }} &nbsp;</h6>
@@ -39,17 +39,17 @@
                                     <h6>+6285773677367</h6>
                                     <h6 class="mb-5"> {{ Carbon\Carbon::parse($pay->created_at) }}</h6>
                                 </div>
-                                <p class="mb-4"> Bukti Pembayaran transaksi (INVOICE) dengan transaksi ID
+                                <p class="mb-4"> Proof of Payment of transaction (INVOICE) with transaction ID
                                     #{{ $pay->Transaction->id }}</p>
                                 <table>
                                     <tr class="">
                                         <th>DESCRIPTION</th>
                                     </tr>
                                     <tr>
-                                        <td>Nama {{ $pay->Transaction->Customer->name }}</td>
+                                        <td>Name {{ $pay->Transaction->Customer->name }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Reservasi Kamar {{ $pay->Transaction->Room->no }}</td>
+                                        <td>Room Reservation {{ $pay->Transaction->Room->no }}</td>
                                     </tr>
                                     <tr>
                                         <th>Price/day IDR {{ number_format($pay->Transaction->Room->price) }}</th>

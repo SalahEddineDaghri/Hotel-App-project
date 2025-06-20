@@ -7,11 +7,15 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\StripeController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 
 // (Hotel) USER index
 Route::get('/myaccount/edit', [UserController::class, 'cusedit']);
@@ -89,7 +93,7 @@ Route::post('/dashboard/order/confirmation', [TransactionController::class, 'con
 Route::get('/dashboard/order/confirmation', [TransactionController::class, 'errorget'])->name('confirmationget');
 Route::post('/dashboard/order/pay', [TransactionController::class, 'payDownPayment'])->name('payDownPayment');
 // (Hotel) History payment & debt payment & invoice
-Route::get('/dashboard/order/history-pay', [PaymentController::class, 'index']);
+Route::get('/dashboard/order/history-pay', [PaymentController::class, 'index'])->name('py');
 Route::get('/dashboard/order/history-pay/{id}', [PaymentController::class, 'invoice'])->name('payment.invoice');
 Route::get('/dashboard/order/{id}/pay-debt', [PaymentController::class, 'debt']);
 Route::post('/dashboard/order/debt', [PaymentController::class, 'pays'])->name('paydebt');
@@ -98,8 +102,53 @@ Route::post('/dashboard/notif', [DashboardController::class, 'notifiable']);
 Route::get('/dashboard/markall', [DashboardController::class, 'markall']);
 
 // Login Register Logout
-Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
-Route::get('/register', [LoginController::class, 'register'])->middleware('guest');
+Route::get('/register', [LoginController::class, 'register'])->name('register')->middleware('guest');
 Route::post('/register', [LoginController::class, 'store']);
 Route::any('/logout', [LoginController::class, 'logout']);
+
+// // payment
+// Route::post('/payment/process', [PaymentController::class, 'process'])->name('payment.process');
+// Route::post('/payment/paypal', [PaymentController::class, 'paypal'])->name('payment.paypal');
+// Route::post('/payment/bank-transfer', [PaymentController::class, 'bankTransfer'])->name('payment.bank-transfer');
+// Route::post('/payment/mobile-money', [PaymentController::class, 'mobileMoney'])->name('payment.mobile-money');
+
+// // routes/web.php
+// Route::get('/stripe/checkout', [StripeController::class, 'checkout']);
+// Route::get('/stripe/success', [StripeController::class, 'success']);
+// Route::get('/stripe/cancel', [StripeController::class, 'cancel']);
+
+// // routes/web.php
+// Route::get('/paypal/pay', [PayPalController::class, 'createPayment'])->name('paypal.payment');
+// Route::get('/paypal/success', [PayPalController::class, 'paymentSuccess'])->name('paypal.success');
+// Route::get('/paypal/cancel', [PayPalController::class, 'paymentCancel'])->name('paypal.cancel');
+
+// routes/web.php
+Route::post('/checkout', [StripeController::class, 'checkout'])->name('checkout');
+
+// Étape 2 : rediriger vers Stripe Checkout
+
+Route::post('/stripe/checkout', [StripeController::class, 'checkout'])->name('stripe.checkout');
+
+// Success / Cancel
+Route::get('/stripe/success', [StripeController::class, 'success'])->name('stripe.success');
+Route::get('/stripe/cancel', [StripeController::class, 'cancel'])->name('stripe.cancel');
+
+
+Route::get('lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'fr', 'ar'])) {
+        Session::put('locale', $locale);
+        App::setLocale($locale);
+    }
+    return redirect()->back();
+})->name('lang.switch');
+
+
+Route::get('/currency/{currency}', function ($currency) {
+    $currencies = ['MAD', 'USD', 'EUR'];  // العملات اللي كتدعمها
+    if (in_array($currency, $currencies)) {
+        Session::put('currency', $currency);
+    }
+    return redirect()->back();
+})->name('currency.switch');

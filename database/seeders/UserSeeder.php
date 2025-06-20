@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
             'telp' => 851312512,
             // 'birthdate' => Carbon::yesterday(),
             // 'jk' => '?',
-            'email' => 'admsin@gmail.com',
+            'email' => 'Customer@gmail.com',
             'password'=> bcrypt('admin'),
             'is_admin' => 0
         ]);

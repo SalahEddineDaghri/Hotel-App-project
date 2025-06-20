@@ -8,7 +8,7 @@
         <div class="container">
             <div class="card border-0 shadow">
                 <div class="card-header">
-                    <h4>Tambah foto kamar {{ $room->no }} #{{ $room->id }}</h4>
+                    <h4>Add Room Photo {{ $room->no }} #{{ $room->id }}</h4>
                 </div>
                 <div class="card-body" style="margin-bottom:100px">
                     <form action="/dashboard/data/room/{{ $room->no }}/store-image" method="POST" enctype="multipart/form-data">
@@ -17,7 +17,7 @@
                         <div class="col-md-7 col-lg-7 col-12 order-md-1 order-2">
                             <div class="card border-0" style="margin-top: 28px">
                                 <div class="card-header">
-                                    <h5>Data foto kamar {{ $room->no }}</h5>
+                                    <h5>Room photo data {{ $room->no }}</h5>
                                 </div>
                                 <div class="card-body">
                                     <table class="table table-responsive table-bordered" id="myTable">
@@ -69,7 +69,7 @@
                                     <input type="text" class="form-control" disabled value="{{ $room->id }}"  id="room_id"  placeholder="ex 10A">
                                 </div>
                                 <div class="col-md-9 col-lg-9">
-                                    <label for="image" class="form-label">Tambah Foto Kamar </label>
+                                    <label for="image" class="form-label">Add Room Photo </label>
                                     <input class="form-control" name="image" type="file" id="image">
                                     <input type="text" name="room_id" hidden value="{{ $room->id }}">
                                     <button class="btn btn-dark mt-4 ms-auto" type="submit"> SUBMIT </button>

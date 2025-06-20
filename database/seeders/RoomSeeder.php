@@ -16,49 +16,247 @@ class RoomSeeder extends Seeder
     public function run()
     {
         $rooms = array(
-            array('id' => '1','type_id' => '10','status_id' => '1','no' => '10A','capacity' => '2','price' => '650000','info' => 'Aut excepturi ut sint dolorem sed non. Quia assumenda minus aut quidem culpa vel quod. Non ex beatae fugit accusantium tenetur vel. Eos suscipit tempora ex voluptatibus hic. Recusandae voluptates dolorem cum aspernatur asperiores accusamus. Rerum deserunt sunt quis voluptatum blanditiis et. Quam est eum et eveniet voluptatem veritatis cumque. Commodi quo iste quis autem. Occaecati expedita perferendis accusantium. Et deserunt itaque natus eum. Sit voluptas sunt ut. Et ipsum atque voluptatem doloribus itaque non sapiente. Distinctio praesentium cum enim voluptates inventore. Veritatis sit atque quam. Consectetur id aliquam culpa autem quae qui adipisci magni. Dignissimos ad omnis ut aperiam sequi in officiis. Error neque qui occaecati asperiores perspiciatis. Blanditiis voluptates tempora id. Reiciendis consequuntur dignissimos doloremque vero ut numquam quos. Saepe aut et et iste dignissimos illo id quia. Pariatur aliquam porro dicta eveniet asperiores culpa ut. Voluptas commodi nisi amet et saepe. Impedit quo nisi ex eligendi. Quis ut voluptatibus labore non blanditiis. A consequatur tenetur nobis dolor voluptatem nulla voluptas. Numquam est quasi corrupti facere. Alias ab officiis fugiat. Debitis deserunt est omnis nisi illo exercitationem. Aut deleniti aliquid sapiente vel qui autem aliquam. Non accusamus distinctio aspernatur molestiae id ullam. Facere numquam sint vel perspiciatis facere. Quisquam sed molestiae esse mollitia sed. Magni quia aliquam in et ipsum. Ut laborum dignissimos quia rem iure et architecto. Est quas soluta sunt suscipit autem. Sint veritatis aut ut nostrum veritatis delectus autem quae. Itaque non autem sint quis ipsam autem. Aut nihil ea sit eveniet. Non sed doloremque voluptatem provident. Quod qui voluptatem voluptas qui. Sed dolores reprehenderit sint rem. Illum autem occaecati placeat ipsa. Quae corrupti ipsam voluptas molestias enim excepturi perspiciatis. Aliquam ad architecto in dolorem numquam nulla quod. Nesciunt et dolores optio. Dolores esse culpa ducimus neque architecto assumenda beatae.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '2','type_id' => '11','status_id' => '1','no' => '11C','capacity' => '6','price' => '2000000','info' => 'Dolor quae magni voluptatem doloribus modi assumenda. Beatae voluptatem laboriosam porro in quaerat. Officiis excepturi sed mollitia fugiat. Consequatur vel itaque recusandae ratione sint. Alias rerum ad quidem modi recusandae veritatis ut nulla. Molestiae rem fuga cumque. Et debitis aut voluptatem amet atque aspernatur. In quia quaerat temporibus recusandae neque ut in. Consequatur qui et in est quia. Dolorem consequuntur aut officia doloribus amet. Sit blanditiis dolore blanditiis itaque enim rerum. Qui rerum eligendi a officiis exercitationem labore animi. Voluptatem labore atque est rerum odit architecto. Aliquid dolore voluptate harum sit. Dignissimos amet quo et porro autem. Nihil earum excepturi in eum aut corrupti eos. Accusantium modi rerum qui. Molestias ab et cumque a voluptatem deleniti autem. Dolores voluptatum officiis unde. Vel quas dicta id et repellat deserunt. Quia ut id dignissimos ut facilis. Ab atque error possimus eligendi quia et. Rerum sequi facere quia est. Odit aut saepe voluptatem non non modi dolores. Nobis sapiente quia nobis velit. Quae optio praesentium commodi itaque quidem. Ut molestiae id doloribus voluptatem rerum. Neque consectetur consequuntur ut exercitationem.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '3','type_id' => '6','status_id' => '1','no' => '12A','capacity' => '11','price' => '1750000','info' => 'Velit delectus nihil qui adipisci. Quos ea vitae quae dicta molestiae. Aut omnis ut corrupti. Quo beatae possimus quidem cupiditate exercitationem eveniet. Tempore quisquam dolores nihil mollitia et velit. Amet velit et eius. Beatae expedita quaerat voluptates cumque ipsam. Est et tempora dolorum qui iste quos. Enim vero totam omnis corporis tempore. Id sunt autem numquam natus id adipisci. Debitis sapiente sunt cum. Et doloribus sit numquam ipsam. Vel officia vel animi esse consequuntur quia. Rerum iure cupiditate excepturi voluptatem est atque. Eos quos temporibus sit unde. Quia rem numquam blanditiis aut qui ad et. Voluptatem sit animi est qui ab optio. Ab qui blanditiis excepturi totam animi. Nemo consequatur quis illo quidem. Sint placeat minus at optio nihil eveniet nostrum. Qui ut sapiente qui. Nemo maxime tempore autem assumenda dolorum earum et. Aliquid unde accusantium fuga saepe dolores architecto odio. Laudantium aperiam ex sint esse magnam. Laudantium maiores ut ut asperiores. Necessitatibus animi sapiente et voluptas alias. Praesentium aut unde quam est omnis sed amet. Quo quo pariatur sed voluptates in aut. Voluptates natus hic incidunt aperiam sit tempore. Omnis nostrum ut laborum aut et. Dignissimos fuga eveniet consectetur impedit consectetur expedita non. Non laboriosam aliquid molestiae animi iure aliquid ut. Voluptates quod ut omnis qui porro aut. Cumque omnis et debitis porro optio distinctio ad. Sed sed tempora modi odio et. Labore facere aperiam veritatis esse. Eligendi aut eaque voluptas suscipit.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '4','type_id' => '10','status_id' => '1','no' => '13D','capacity' => '11','price' => '2000000','info' => 'Hic laborum ipsa in. Dolorum odit reiciendis voluptatum ex illo doloremque consequatur. Sed velit perferendis dolore odit aliquid vel. Sint architecto nobis dolores. Dolor non non nihil. Sed ex aut quaerat voluptatem. Beatae et voluptas et fugit eum autem. Repellat cupiditate harum nihil in consectetur suscipit. Tenetur eius non veritatis voluptate voluptas rem. Aut rerum molestiae sunt saepe ut quos aspernatur. Voluptates perspiciatis provident fugiat molestiae est maiores. Aliquid molestiae modi ea commodi perspiciatis numquam ipsum. Amet inventore ut deleniti minus voluptatem sunt quod. Reiciendis ea eveniet eligendi qui distinctio vitae. Inventore alias at voluptatem voluptate. Dolorem quia iste sint et autem. Alias alias placeat veniam deleniti rem nostrum aut. Qui ut quod libero in facilis dicta. Magni rerum architecto beatae sed. Suscipit ipsum expedita omnis. Est eaque sit dicta velit temporibus. Sit minus accusamus iste et voluptatem. Tempore est pariatur accusamus enim illum. Voluptatem nesciunt velit deserunt et molestiae eaque non. Non eaque quos quia beatae voluptas. Error fuga tempora soluta rem rerum. Molestias excepturi eum blanditiis. Autem maiores ut itaque et inventore iure. Provident magni quia laborum tenetur. Ea quo doloremque ex hic possimus est ut. Ut ut nemo molestiae sit aut. Sed aut consequatur necessitatibus dolore et molestias. Quod voluptas sunt nesciunt praesentium vel consequuntur. Animi voluptatem natus atque consequatur corporis minima. Vitae aut voluptatem autem velit. Optio molestias dolore omnis. A sit dolorem dolor autem nemo. Sapiente dolorum sed voluptatem et qui. Ratione ut blanditiis corporis quo. Est aliquid dolor rerum quae. Sit libero id deserunt tempora. Earum nam autem modi pariatur perspiciatis itaque iure. Ut qui mollitia et perspiciatis est. Omnis voluptatem et magni aut. Sequi consectetur ullam blanditiis.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '5','type_id' => '1','status_id' => '1','no' => '14D','capacity' => '3','price' => '1200000','info' => 'Id aperiam provident quia doloremque est corporis consequuntur enim. Ut optio sint quia quo aliquam aperiam consequatur non. Expedita rerum odit facilis est ut id. Ut aut et ex quibusdam. Accusamus nihil laudantium tempore placeat. Qui vitae quasi vitae corrupti. Sit ipsa nihil laborum vel et itaque dolores. Mollitia quo sapiente eveniet voluptas quaerat dolores libero. Saepe molestiae fugit culpa voluptate aut corrupti suscipit vitae. Veniam consequuntur non rerum assumenda fugit eum. Dolor voluptatum placeat dolores officia architecto. Labore eum asperiores explicabo quos quasi voluptatibus repellendus. Vel illum est minus provident. Minima molestiae esse ab omnis quibusdam accusamus dolores. Incidunt delectus neque quam aut vel iusto veniam eum. Et odit sed eum laboriosam corrupti earum voluptate nesciunt. Modi et voluptas necessitatibus repudiandae rerum. Laborum qui quis et consequuntur ea harum voluptatem. Placeat libero nostrum quas impedit facilis. Facilis unde aut vero facilis facere ullam vero corporis. Dicta id dolore magni at et magni minus. Architecto consequatur assumenda quas minus. Enim reprehenderit deserunt cumque. A sit est et magnam rerum commodi. Exercitationem aperiam quidem debitis illum. Voluptatibus perferendis modi sed vel ipsum tempora. Dolorum molestias occaecati aspernatur est deserunt neque distinctio est. Ut quis error quasi nihil. Adipisci earum minus libero porro. Sed excepturi illo tempore sint ipsa est quidem. Et quasi sed sed tempora molestiae necessitatibus qui. Molestiae possimus laborum et nihil beatae nemo dolor debitis. Sit accusamus et incidunt.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '6','type_id' => '3','status_id' => '1','no' => '15A','capacity' => '5','price' => '500000','info' => 'Nisi rerum provident autem magni. Ut assumenda totam dolores soluta laborum dolores at. Et aut soluta aut. Ex corrupti perspiciatis dolorum sint quidem ducimus. Et voluptatem doloribus asperiores cumque. Voluptatibus totam omnis aut consequatur. Nostrum sequi excepturi qui ut. Tenetur soluta voluptatem alias quia. Nihil debitis commodi aliquid sunt adipisci nam. Enim aperiam deleniti explicabo velit totam. Omnis ipsa dicta doloremque iste consectetur quia. Tempora eum officiis consequuntur. Optio vel excepturi tenetur veritatis delectus placeat at doloremque. Mollitia rerum vitae dignissimos eum recusandae. Ut quis dolore similique consequatur nihil earum odit. Enim saepe eos omnis et molestiae. Accusamus pariatur dolores nobis commodi voluptatum sint maiores inventore. Est et saepe in architecto. Saepe nam error debitis ut mollitia possimus. Dolore temporibus aspernatur tempora et velit occaecati. Quam et provident totam. Est est laudantium dignissimos architecto sunt doloribus eos. Magnam qui distinctio esse id nemo nihil hic. Necessitatibus velit asperiores vel modi omnis dolorem quos. Optio ea aut at ut. Nisi voluptatum exercitationem est rerum maxime assumenda neque. Quo quis error quo non dolores sint. Et labore aut beatae sit. Qui quia recusandae odio incidunt recusandae fugit doloribus repellat. Est laborum autem omnis sit illo ea. Velit ab alias aliquid sint. Deleniti architecto aliquam soluta voluptatum sunt nemo fugit. Qui et ad consequatur officia eveniet rem. Dolor beatae omnis rem pariatur. Molestias rerum quia distinctio libero. Dignissimos possimus exercitationem illum ipsam. Vel molestiae ut ut aut. Dolore qui qui id voluptas laboriosam. Quod ut inventore nihil voluptatum et similique commodi quo. Fugit non non rerum nam maiores. Molestias vel voluptatem repellendus unde at enim. Ut quam error qui nisi. Consequatur accusantium ipsa nemo. Inventore consequatur provident nulla sed. Et natus est omnis est dolor culpa. Neque eum laborum pariatur rem doloremque. Impedit aut reiciendis occaecati. Aut dolor est a quis ea et. Voluptatibus et asperiores enim soluta. Quo dolores ullam quam.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '7','type_id' => '8','status_id' => '1','no' => '16D','capacity' => '1','price' => '950000','info' => 'Optio quae unde in dicta vel vitae nesciunt delectus. Corrupti iusto illum laborum neque. Est deserunt itaque quis perspiciatis aut laboriosam. Et laboriosam in doloribus et. Animi dolores aliquid id cum temporibus. Qui porro quae dolores quod molestiae quidem quos beatae. Natus debitis quis vel. Totam eaque qui odit voluptates qui est qui. Delectus qui fugit aspernatur eum. Et enim sit doloremque tempore eveniet facere et dolorem. Molestiae quae ipsum explicabo eos officiis eum perspiciatis hic. Recusandae cumque vitae accusamus officia. Vel consequatur ad sed eum quis voluptatem. Dolor autem eveniet nesciunt qui sequi. Labore eos soluta nemo reiciendis. Dicta perferendis voluptatem ullam libero enim rerum. Voluptatum voluptatibus enim enim vel ex. Et dolorem iusto molestiae quas. Tempora distinctio quaerat fuga ducimus qui blanditiis. Quod expedita omnis est necessitatibus. Corporis deleniti quis dicta et. Omnis animi fuga quo consequuntur dolore et repudiandae in. Sit voluptate doloribus cum autem. Et modi nihil ad quis. Distinctio illo nesciunt beatae aut et. Dolor assumenda quas sit dolor quam. Totam dicta magnam velit numquam quia necessitatibus. Dolores quaerat iusto rem expedita voluptate consequuntur quibusdam. Nobis odio ipsum eligendi voluptas odit dolorum earum delectus. Cupiditate minus nihil molestias quod eum. Id explicabo debitis autem natus dolor odit alias. Officiis nihil asperiores quo vel. Perferendis dolores quidem et odio aut assumenda. Molestias vitae nihil in similique at consequatur itaque.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '8','type_id' => '8','status_id' => '1','no' => '17A','capacity' => '6','price' => '650000','info' => 'Sed accusantium natus voluptatem expedita occaecati vero. Nemo pariatur labore officia voluptates architecto doloribus eaque. Qui incidunt itaque est earum ullam. In ex voluptatibus veritatis. Cum repellat omnis dolore laudantium sed. Modi itaque excepturi aperiam vel. Ut possimus recusandae ipsa sed hic adipisci sint. Et minima sapiente voluptas. Velit earum dolorum sit quae. Sunt porro voluptate aut repellat deserunt repellat. Enim labore consequuntur officiis delectus. Voluptatum hic facere nisi impedit. Sit laboriosam blanditiis quisquam soluta. Sit consequatur voluptates eos. Quis odio aut est nihil ducimus. Necessitatibus et qui perspiciatis ab est. Rerum perferendis ex unde dicta. Amet eaque officia ut aliquam repudiandae ratione eaque. Quos est aut necessitatibus. Architecto omnis ut magnam fugiat. Ea molestiae rerum dolor neque natus quis est. Officiis ipsam dignissimos et. Quis ut sunt illum eum qui. Delectus veritatis consequatur quia. Sed harum velit placeat laborum quibusdam voluptatem. Qui accusamus mollitia occaecati deleniti et. Beatae minus pariatur nobis ut facere cupiditate. Atque recusandae asperiores animi. Quisquam sit quasi tempore facilis. Aliquam quia hic excepturi eos sunt et sequi. Numquam nobis corporis veniam necessitatibus quia. Voluptatibus iure in aperiam ipsa quas ab dolorum. Architecto dolorem et atque labore. Provident distinctio unde voluptate enim. Harum illum ducimus et tempore. Temporibus qui odit corrupti et. Sit recusandae voluptatem esse vitae alias et excepturi et. Sequi ipsum incidunt ipsa qui. Explicabo blanditiis vel natus unde earum consequuntur ullam.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '9','type_id' => '14','status_id' => '1','no' => '18C','capacity' => '11','price' => '850000','info' => 'Voluptatum est autem et consequuntur. Nemo consequatur rem et voluptas. Est cum assumenda explicabo sed minima sed rem. Sapiente ad soluta fuga est. Id beatae maxime dolorum molestiae odio. Aut tempore asperiores aut esse. Ut odio doloribus expedita et iure. Quos eos enim eius similique sed consectetur sed. Vel quaerat aliquam distinctio numquam. Nihil dolor laboriosam distinctio vero et distinctio quaerat. Quo ea dignissimos quaerat iusto optio consequatur aut. Veritatis voluptates molestias ad sint laboriosam cum. Quia hic pariatur et consectetur consequatur debitis. Quis aut repellendus velit. Neque enim deleniti molestiae harum dolorem perspiciatis est vel. Est temporibus sit id. Porro a dolor sint provident est. Consequatur sed ad magnam quisquam veritatis doloremque. Praesentium aut sapiente mollitia. Vero dolor iste incidunt delectus ducimus vero corrupti. Laboriosam nobis eum ullam fugit quasi architecto. Sunt fugit voluptatem et ex. Assumenda est quam dignissimos magnam saepe. Odio repellat dolor fuga ea aspernatur ullam. Dicta sunt ut velit sit blanditiis. Enim nobis voluptate velit magnam excepturi debitis rem. Sed libero dolor rem sint laboriosam dolorem et repudiandae. Dignissimos repudiandae quis expedita et voluptas quam omnis. At perspiciatis sequi ut cum incidunt velit. Quibusdam itaque consectetur quia sint tenetur. Dignissimos similique laborum voluptatem perspiciatis quas et aut autem. Temporibus blanditiis quibusdam consequatur dicta repudiandae omnis reprehenderit. Aut omnis totam aut temporibus at eveniet iusto. Totam vel omnis eos suscipit ut nobis aut. Sed eligendi sunt unde accusamus dolores reprehenderit. Quis pariatur culpa voluptas. Corporis ut in ea optio harum. Qui quaerat sint temporibus sunt consequuntur non. Et necessitatibus distinctio consequatur quaerat hic accusamus. Quia non possimus labore corrupti error ipsum perferendis. Unde iusto nisi reiciendis cum voluptatem. Temporibus quam rerum officia. Nostrum sequi quasi sit doloremque voluptates dignissimos minus. Doloribus earum voluptas harum vero. Doloribus sint recusandae accusamus neque. Repellendus repellendus asperiores odio et.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '10','type_id' => '10','status_id' => '1','no' => '19A','capacity' => '1','price' => '1750000','info' => 'Et ut harum consequatur et minus sapiente. Magnam enim adipisci ducimus magni ut. Magnam et hic animi et. Provident earum et est dolore adipisci culpa magnam. Et reprehenderit repellat amet molestiae molestiae expedita est. Quia odio ut at. Illum fugiat id aut distinctio. Quasi minus magnam voluptates ut maxime. Aut est ut in optio vero perferendis quia et. Nemo impedit tempore tenetur sed corporis nam. Quia aliquam voluptate ut quos et ullam. Officiis eos reiciendis ipsa mollitia et. Accusamus voluptas illo ratione molestiae iure. Ut voluptates magnam laudantium corporis distinctio. Magnam vitae laboriosam veniam. Explicabo sit rem rerum reprehenderit saepe ut ut. Ad qui iste qui quo aperiam facere enim. Provident laudantium dolores consequatur assumenda aperiam. Laudantium sit sit molestias quaerat voluptas quod sed. Vitae dolores ipsam consectetur error ea eos. Qui id fugit voluptate rem. Iure expedita quae iste. Similique inventore voluptas eaque. Maxime sed animi autem autem aut laudantium ut. Tempore sunt ea voluptas est sit explicabo autem. Rem consequatur quisquam rerum. Iste inventore itaque et voluptas nesciunt. Ipsa sapiente error aliquam voluptate odio provident. Odio rerum non rem accusantium quam corporis earum repudiandae. Inventore optio et cumque qui eum quo. Laudantium temporibus autem sunt voluptas id. Quia rerum ut modi quos ipsam. Incidunt distinctio officia numquam officia. Qui accusantium eius laudantium explicabo sequi esse. Iusto ut repellat nobis ut aliquid. Vel officia atque ad ut at. Facere magnam nam placeat debitis exercitationem beatae a. Voluptatem quibusdam libero quia. Est aliquam iste nam quis similique sed ut. Impedit molestiae sit incidunt aliquam ea quasi incidunt eos. Ducimus neque modi cupiditate molestiae vel quo sit officiis.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '11','type_id' => '12','status_id' => '1','no' => '20D','capacity' => '2','price' => '650000','info' => 'Qui eum expedita provident eum aliquam. Et aut voluptatem sunt praesentium culpa. Possimus voluptatem dolor vero voluptas. Modi corporis recusandae nobis perferendis magni. Est est aperiam dolores illo officiis dicta. Aliquid sed et iure id qui optio autem. Alias iste laborum maiores atque sed. Et corporis in at alias odio sunt. Iste veritatis officia non sequi et quod. Eum quisquam est magni quis est autem aliquid. In quidem vel distinctio et eveniet id. Impedit molestiae fugit tenetur consequuntur aut aliquid. Cupiditate est animi qui quis nisi. Voluptatem tempora culpa voluptas sit. Officia qui harum est ullam temporibus pariatur quis tempore. Et voluptas cupiditate est quia enim ut tenetur. Nam ad ut inventore. Ut consequatur quia dolorum consequatur nisi laborum assumenda. Illo et est voluptatum ratione qui dignissimos veritatis. Eum accusamus sed illo quam totam sint. Quis aliquid fuga architecto et dolore omnis. Vero sed eius autem nihil est hic cum voluptatem. Non voluptas omnis quam rerum et non quos ea. Fugiat cumque tempore eum minus delectus et. Quia neque sit dolorem voluptatum qui dicta accusantium. Hic consectetur et qui excepturi. Officia aperiam itaque vel porro est soluta sunt. Eum sed repellat quaerat et quis modi consequatur aut. Deserunt vitae debitis necessitatibus ut eveniet dignissimos dignissimos. Quaerat omnis non reiciendis quo facilis. Quia laudantium cumque eligendi numquam exercitationem. Voluptas distinctio dolores voluptatem et sunt. Aut quia sunt consequuntur impedit eligendi. Ut corporis omnis similique incidunt veritatis porro. Molestiae quod et et eligendi blanditiis. Magnam vitae nemo vel nemo quis excepturi occaecati. Dolore qui fugit non voluptatem ut culpa quidem. Aspernatur omnis quibusdam temporibus cum. Aperiam sunt quidem vero reprehenderit beatae est. Culpa pariatur et facere est provident molestiae. Explicabo iure non voluptates a cupiditate pariatur autem. Facilis similique omnis recusandae placeat.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '12','type_id' => '11','status_id' => '1','no' => '21D','capacity' => '6','price' => '2000000','info' => 'Aut aut excepturi voluptas et animi iure quibusdam iste. Deserunt dolor itaque ipsa accusantium quia ut quia. Voluptatem mollitia est rem nulla ad. Aperiam corrupti aut et. Doloribus natus neque sit eum. Minima est hic dolorem enim nulla libero repellendus placeat. Quis culpa aut consequatur et est consequatur nesciunt et. Vel eveniet laboriosam nemo temporibus eum vel. Culpa deserunt nihil culpa repellat dolorum. Veniam dolore voluptatem quaerat sed cupiditate nam explicabo. In sequi libero quis voluptatem est quo accusamus. Temporibus sed nemo ut ullam aspernatur sint. Est corporis numquam ea est alias omnis quae. Reprehenderit quae inventore atque qui aut omnis. Quas quibusdam ab sed maiores culpa. Unde possimus esse sit ipsa accusamus quidem. Quis eum distinctio vero sit corporis fuga. Molestiae saepe aut voluptatem incidunt quia impedit voluptatibus. Aliquam temporibus at ut. Est nulla omnis sit recusandae. Consequatur aut sint ducimus pariatur mollitia eius. Magni sed rerum ut. Repellendus nobis sit sit a. Consequuntur voluptatem odio libero est dolores et. Et itaque error reprehenderit possimus quasi. Tempore autem reiciendis odio facere dolorum delectus. Expedita ipsam totam sit iusto asperiores explicabo consequatur incidunt. Unde harum minus dolore vero recusandae repellendus sapiente sed. Delectus veniam commodi rerum voluptate nihil rem aspernatur non. Amet dolores temporibus quia pariatur. Doloribus quia omnis omnis ducimus dolor. Molestiae aut non officiis nemo et et enim. Quo sunt pariatur non et ad et. Asperiores sed amet iusto quia eveniet. Qui quisquam repellendus ad quis non iste. Excepturi minus sed fuga at. Rem quasi doloribus quam sed mollitia id tempore. Modi et sed sunt rerum in maiores. Sit ut at officia. Qui iusto quod voluptas totam labore consequatur. Tempore aut porro et tenetur sed esse.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '13','type_id' => '14','status_id' => '1','no' => '22A','capacity' => '3','price' => '2000000','info' => 'Sequi voluptatem voluptas omnis. Ea id maxime quas totam eos quia. Dignissimos rerum maiores voluptatum praesentium. Distinctio vel corporis reiciendis vel et recusandae. Ut officiis aut sunt esse placeat cum. Sint omnis maxime sequi magni occaecati libero similique est. Quae aut nulla veritatis. Officiis quis incidunt quia natus vel ducimus amet. Recusandae ut consequuntur sit perferendis. Itaque est placeat et cum. Nam nemo qui quo consequatur cupiditate possimus. Quam temporibus ullam pariatur quas. Quaerat tempore enim non alias. Corrupti dolores sapiente sit similique quidem quia. Repellendus est hic sapiente harum amet voluptatem sint. Ut et corporis ipsa fugiat voluptas eum. Quia alias provident qui ut optio nobis voluptatem quis. Sed dicta occaecati porro eveniet. Sed nisi explicabo eaque et non vitae. Sequi veniam vel modi non. Consectetur qui deserunt sed quia distinctio. Id culpa quod est autem. Aspernatur architecto voluptas sint id consequuntur dignissimos rem. Eius aliquam placeat corporis aut repellat esse. Et quia dolorem numquam quia architecto odit sunt. Itaque possimus in est neque maiores soluta quis. Voluptas et eveniet laborum eaque. Est est nihil eaque veritatis. Autem nesciunt delectus est qui. Cupiditate placeat necessitatibus aut labore quia. Alias rerum vel maxime sunt.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '14','type_id' => '6','status_id' => '1','no' => '23B','capacity' => '12','price' => '1750000','info' => 'Debitis est nesciunt dolorem soluta officia in minus. Possimus voluptas corrupti optio amet. Quidem excepturi modi corrupti. Omnis voluptates debitis doloremque aut provident ipsam non. Dolore vitae cum ipsam dolorem. Facilis alias id corporis soluta ea soluta ratione. Maxime et repellendus sed quo et. Est nesciunt qui et esse dolor dolores. Quam quisquam fugit esse eaque sequi aut hic. Explicabo ducimus fugit commodi magnam. Accusantium quia quia voluptatem omnis est numquam. Non laudantium dignissimos asperiores quae id. Numquam quia neque qui cupiditate cum vero. Molestiae praesentium saepe nemo sit. Necessitatibus ipsa vel recusandae. Distinctio quibusdam inventore id corporis molestiae eius. Nisi illum rerum aut culpa praesentium. Et reiciendis nihil consectetur asperiores et eos. Eveniet consequatur blanditiis et aperiam consequatur earum est. Labore qui aperiam laborum dolorum quia reiciendis. Consectetur nesciunt dignissimos autem voluptas dolorem ipsa qui. Tempore quo unde cupiditate accusamus. At a sunt aperiam qui. Molestiae aperiam velit et aliquam ducimus voluptate. Doloribus totam sunt sint amet aut nesciunt. Laboriosam praesentium quibusdam laboriosam reiciendis quia. Voluptatem corrupti et quia voluptatem soluta consequatur vel. Deserunt et sequi pariatur ea delectus amet ea.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '15','type_id' => '15','status_id' => '1','no' => '24A','capacity' => '5','price' => '950000','info' => 'Est quas id sint odit ut architecto est. Provident quasi ut architecto in est dolor commodi. Exercitationem unde ullam illo quia rem qui eaque. Consequatur fugit illum praesentium non molestiae quia ad cumque. Voluptas aliquam et quo sit autem aut est. Sunt harum delectus explicabo assumenda eum blanditiis. Fuga autem aut illum consequuntur ut odit voluptatem. Neque illo fugit eveniet adipisci provident est. Quam et voluptatibus natus natus mollitia repellat. Cum sit illo est repellat quis natus pariatur. Facilis quis quam quos eos ex nemo. Quia et ut non aliquid deserunt. Totam dignissimos iure harum excepturi. Animi esse optio voluptas ut reiciendis cum. Quis odit autem et. Est vero nam vel eaque cupiditate labore est. Et rerum dolorem porro est quas. Animi voluptatem consequatur nam vel. Sint praesentium ex et accusantium dolorem quae molestias. Perferendis necessitatibus autem sunt error assumenda. Omnis officiis dolorum ut non et rerum et. Vero rerum est dolore dolor quo. Autem delectus sit rerum corrupti dolorem at et. Fugiat dolorum labore ut debitis. Maiores sint temporibus reiciendis dolores voluptate nobis a. Iusto eos quo sit doloremque. Doloribus ut similique consequuntur quis veniam et. Quia cumque repellendus eum nostrum. Voluptas commodi sapiente laudantium velit. Explicabo ut sequi molestias doloremque. Velit nemo dolores dolore consequatur cum. Beatae tempora et et. Iusto facere est consequatur ut.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '16','type_id' => '15','status_id' => '1','no' => '25A','capacity' => '11','price' => '1500000','info' => 'Quisquam repudiandae optio sed. Qui est impedit id. Ut quam porro in exercitationem aut blanditiis. In ullam laboriosam quae quidem. Velit quia tempore eaque non. Consequatur quis dignissimos iusto consequuntur earum ut consequatur earum. Rerum doloremque sed odit nostrum vel ea praesentium. Eos itaque numquam reiciendis culpa sapiente architecto aut. Quia et dicta facilis nobis. Qui quod et ullam aliquid. Laudantium molestiae est impedit id. Voluptatem sint quod ut porro qui sint consequuntur rerum. Odit error iure sunt minus. Voluptatibus sunt ab occaecati est sit. Distinctio ipsa magni ipsum autem neque aut animi. Aut velit ratione est iusto quas et enim. Quia debitis voluptatem alias itaque consequatur illum. Exercitationem aliquid ut id nobis. Recusandae assumenda sint qui inventore iste ullam. Eveniet dolorem quia illum delectus ad. Voluptas quia provident sed sequi sit vero. Exercitationem reprehenderit delectus dolorem incidunt laborum. Molestias ut sed deleniti itaque magni labore. Et ea facere aut earum vel. Quia dolor blanditiis quia corrupti in doloribus. Ut et labore ipsam adipisci cupiditate. Et et et fugiat illum. Et non reprehenderit molestias a nihil. Aut consequatur atque facilis tempore labore ea.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '17','type_id' => '11','status_id' => '1','no' => '26D','capacity' => '5','price' => '1200000','info' => 'Exercitationem quis possimus cupiditate quia sequi minus. Voluptatibus ab animi consectetur nesciunt animi. Et voluptatem soluta iure nisi ducimus. Et consequatur architecto dolores maxime quae. Modi quam omnis quaerat blanditiis eos repellendus ut. Modi a molestiae sint fuga non inventore sit. Rerum error dolores consectetur nam. Accusamus facilis assumenda maxime sit. Magni est rem adipisci est inventore quasi. Voluptas consequatur sed quo aut. Veniam voluptate natus consectetur perspiciatis ut rerum sint. Tenetur hic quo reprehenderit ut molestiae doloribus culpa. Inventore quibusdam facilis molestiae quia. Dolores iste distinctio praesentium rerum repellat voluptatum commodi. Sit consequatur vero nemo et velit aut doloremque. Sint saepe voluptatem ab fugit pariatur. Quia molestiae consequuntur consequatur aut enim ratione vitae tempore. Corrupti maxime recusandae labore nesciunt. Consequatur ut velit aut eos itaque eaque enim nam. Molestias corrupti omnis dolorum nostrum facilis deserunt reprehenderit. Eos voluptatem minus accusamus dolor occaecati. Iusto libero vitae voluptatibus modi et blanditiis. Maiores provident voluptatem rerum soluta nihil. Voluptates voluptatem exercitationem voluptas quas nemo. Soluta cupiditate vitae voluptatum illo maxime quam. Delectus doloribus ut sapiente voluptate. Eius et temporibus aperiam eius. Ut optio officiis et est vel aut debitis iure. Et sit ut accusantium et vel placeat ut. Commodi recusandae consequatur nemo ipsum. Minus debitis quis minus dolore natus. Repellat quasi eius atque. Asperiores quidem sit animi fugit natus numquam. Asperiores consectetur omnis est id adipisci. Ea est rerum provident sed ut.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '18','type_id' => '14','status_id' => '1','no' => '27D','capacity' => '6','price' => '450000','info' => 'Et repellat laboriosam alias explicabo. Quae aut animi iste soluta. Molestiae et a officia. Tenetur omnis laborum et soluta ut rerum sint dolorum. Quo laboriosam nulla consequatur aliquid. Sunt voluptas vero dignissimos quaerat impedit consequatur aut illo. Dolor magni perferendis et ex nostrum maiores. Dolore necessitatibus sint cumque nobis consequatur. Et eos et et delectus nobis consequatur. Quas et iste voluptas molestiae expedita in. Adipisci modi voluptatem occaecati praesentium tenetur earum. Ad maxime ducimus officiis corrupti fugit corrupti aut odit. Earum quia expedita eum quia. Ab voluptas voluptatem doloremque suscipit velit voluptatem ab earum. Harum illum velit consequatur culpa omnis nisi sint. Ut natus dolores sequi ipsum placeat. Magnam dolores id modi minima. Sunt sint dolores eum amet in. Qui omnis et consectetur atque enim sint inventore. Illo accusantium dolorum non omnis itaque nesciunt sed. Qui aliquam velit quo eum. Quis corporis aut consequatur aspernatur optio. Non quo esse corporis consequatur velit.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '19','type_id' => '6','status_id' => '1','no' => '28A','capacity' => '8','price' => '650000','info' => 'Aperiam nam consequatur ducimus aut optio nemo qui. Modi amet omnis aut magnam sit tenetur repellat. Eos odit vel cumque dignissimos deserunt distinctio. Occaecati quia aut expedita et tempore a. Ullam repudiandae officia voluptatem molestias. Voluptatibus ut voluptas quia molestias laborum nemo. Vitae quos architecto veniam. Ipsa qui ipsa exercitationem sed. Eos accusantium ea aperiam earum. Magnam ut autem et corporis. Molestias eum quia nisi dolor iure est iure. Suscipit molestiae nulla asperiores tempora voluptas. Aut dolores incidunt optio sed eos tempora. Ut voluptatibus aperiam nihil reprehenderit hic enim et. Ad qui in dolores eos sunt nihil. Dolor asperiores dolorum molestiae cum. Ea vero commodi molestiae aut explicabo dolor eum. Alias ab voluptatem quas error. Itaque esse accusamus aut quo quia nihil et. Deleniti consequuntur omnis cumque. Occaecati qui velit velit ratione non dicta ad. Natus eos nesciunt exercitationem eligendi qui. Autem vero suscipit dolorem sit veniam consequatur exercitationem. Facilis aliquid est eum voluptas et molestiae. Culpa nihil ut doloremque molestiae in laudantium. Accusantium perspiciatis et iste voluptatibus et autem harum. Ea provident consequatur dignissimos enim. Ullam nemo corporis deleniti sunt ab nulla. Repudiandae magni quo iusto ab doloribus.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02'),
-            array('id' => '20','type_id' => '11','status_id' => '1','no' => '29A','capacity' => '11','price' => '1750000','info' => 'Sed ab rerum voluptatem quia laboriosam illum. Voluptas numquam rerum dolorem officiis ipsam voluptatem. Voluptas illum adipisci et quis voluptas placeat. Tempore rem eos rem fugiat consequatur. Dolor iure eum ut vel voluptatem. Id provident nisi voluptatibus illum omnis omnis. Quam nisi incidunt et quae aut harum. Nam enim non dolor quibusdam. Suscipit dolorem enim repudiandae animi iure ullam et. Corrupti adipisci soluta et suscipit est qui. Voluptatem placeat impedit ut enim voluptates facere ut. Sit id dignissimos in dolorem est facilis architecto. Harum odio illum sit expedita illum in tempore. Non veniam placeat necessitatibus est fugit. Aut est quibusdam est earum. Amet molestias occaecati maxime commodi ad similique. Est vel corrupti et perferendis. Iste nesciunt exercitationem laboriosam voluptate ut. Qui quidem vel culpa occaecati nemo eveniet. Sit rerum deleniti distinctio molestiae totam. Consequatur vero omnis minima. Sit autem expedita natus quo maxime eius rerum. Repudiandae sed est aspernatur enim sit.','created_at' => '2022-10-26 10:09:02','updated_at' => '2022-10-26 10:09:02')
-          );
+            array(
+                'id' => '1',
+                'type_id' => '10',
+                'status_id' => '1',
+                'no' => '10A',
+                'capacity' => '2',
+                'price' => '650',
+                'info' => 'Standard double room with comfortable queen-size bed, air conditioning, TV, and private bathroom. Ideal for couples or business travelers. Located on the quiet side of the hotel with a nice view of the garden.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '2',
+                'type_id' => '11',
+                'status_id' => '1',
+                'no' => '11C',
+                'capacity' => '6',
+                'price' => '200',
+                'info' => 'Family suite with two bedrooms (1 queen bed + 2 twin beds), living area, and kitchenette. Perfect for families or group travelers. Includes all standard amenities plus extra space and comfort.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '3',
+                'type_id' => '6',
+                'status_id' => '1',
+                'no' => '12A',
+                'capacity' => '11',
+                'price' => '175',
+                'info' => 'Executive meeting room suitable for business gatherings or small events. Equipped with conference table, projector, whiteboard, and comfortable seating for up to 11 people. Catering services available upon request.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '4',
+                'type_id' => '10',
+                'status_id' => '1',
+                'no' => '13D',
+                'capacity' => '11',
+                'price' => '200',
+                'info' => 'Deluxe family room with one king bed and three twin beds. Spacious layout with sitting area and extra storage. Features premium amenities including minibar, coffee maker, and luxury toiletries.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '5',
+                'type_id' => '1',
+                'status_id' => '1',
+                'no' => '14D',
+                'capacity' => '3',
+                'price' => '400',
+                'info' => 'Superior triple room with one queen bed and one twin bed. Modern design with work desk and ergonomic chair. Includes high-speed WiFi, smart TV, and premium bedding for maximum comfort.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '6',
+                'type_id' => '3',
+                'status_id' => '1',
+                'no' => '15A',
+                'capacity' => '5',
+                'price' => '500',
+                'info' => 'Budget-friendly room with two twin beds and one rollaway bed available. Basic amenities including TV, air conditioning, and private bathroom. Great value for backpackers or short stays.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '7',
+                'type_id' => '8',
+                'status_id' => '1',
+                'no' => '16D',
+                'capacity' => '1',
+                'price' => '950',
+                'info' => 'Cozy single room perfect for solo travelers. Features a comfortable twin bed, compact work space, and efficient storage solutions. Quiet location ideal for business travelers or those seeking privacy.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '8',
+                'type_id' => '8',
+                'status_id' => '1',
+                'no' => '17A',
+                'capacity' => '6',
+                'price' => '440',
+                'info' => 'Standard family room with two queen beds. Simple yet comfortable accommodation for groups or families traveling together. Includes basic amenities and daily housekeeping service.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '9',
+                'type_id' => '14',
+                'status_id' => '1',
+                'no' => '18C',
+                'capacity' => '11',
+                'price' => '850',
+                'info' => 'Multi-purpose event space suitable for workshops, seminars, or social gatherings. Flexible seating arrangements available. Includes basic AV equipment and high-speed internet connection.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '10',
+                'type_id' => '10',
+                'status_id' => '1',
+                'no' => '19A',
+                'capacity' => '1',
+                'price' => '200',
+                'info' => 'Luxury single room with premium king-size bed and upscale amenities. Features a spacious work area, premium bath products, and exclusive access to the executive lounge.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '11',
+                'type_id' => '12',
+                'status_id' => '1',
+                'no' => '20D',
+                'capacity' => '2',
+                'price' => '300',
+                'info' => 'Standard twin room with two comfortable single beds. Ideal for business partners or friends traveling together. Includes all basic amenities with efficient use of space.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '12',
+                'type_id' => '11',
+                'status_id' => '1',
+                'no' => '21D',
+                'capacity' => '6',
+                'price' => '250',
+                'info' => 'Premium family suite with separate living area and two bedrooms. Features a kitchenette, dining area, and extra storage space. Perfect for extended stays or family vacations.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '13',
+                'type_id' => '14',
+                'status_id' => '1',
+                'no' => '22A',
+                'capacity' => '3',
+                'price' => '500',
+                'info' => 'Executive boardroom with premium furnishings and advanced AV equipment. Suitable for important business meetings or presentations. Includes complimentary coffee/tea service.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '14',
+                'type_id' => '6',
+                'status_id' => '1',
+                'no' => '23B',
+                'capacity' => '12',
+                'price' => '175',
+                'info' => 'Large conference room with theater-style seating for up to 12 participants. Professional setup with podium, projector, and sound system. Ideal for corporate training sessions or workshops.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '15',
+                'type_id' => '15',
+                'status_id' => '1',
+                'no' => '24A',
+                'capacity' => '5',
+                'price' => '950',
+                'info' => 'Junior suite with one king bed and sofa bed. Spacious accommodation with sitting area and enhanced amenities. Great for small families or travelers wanting extra comfort.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '16',
+                'type_id' => '15',
+                'status_id' => '1',
+                'no' => '25A',
+                'capacity' => '11',
+                'price' => '499',
+                'info' => 'Presidential suite with luxurious furnishings and premium services. Features separate living and dining areas, premium bathroom with jacuzzi, and exclusive butler service.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '17',
+                'type_id' => '11',
+                'status_id' => '1',
+                'no' => '26D',
+                'capacity' => '5',
+                'price' => '799',
+                'info' => 'Family room with one queen bed and bunk beds. Fun and functional design perfect for families with children. Includes child-friendly amenities and extra safety features.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '18',
+                'type_id' => '14',
+                'status_id' => '1',
+                'no' => '27D',
+                'capacity' => '6',
+                'price' => '480',
+                'info' => 'Small meeting room with U-shaped seating arrangement. Basic setup suitable for team meetings or brainstorming sessions. Includes whiteboard and flip chart.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '19',
+                'type_id' => '6',
+                'status_id' => '1',
+                'no' => '28A',
+                'capacity' => '8',
+                'price' => '650',
+                'info' => 'Medium-sized conference room with classroom-style seating. Suitable for training sessions or group presentations. Includes projector screen and basic sound system.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            ),
+            array(
+                'id' => '20',
+                'type_id' => '11',
+                'status_id' => '1',
+                'no' => '29A',
+                'capacity' => '11',
+                'price' => '490',
+                'info' => 'Grand family suite with three separate bedrooms and shared living space. Ideal for large families or multiple couples traveling together. Features premium amenities and extra privacy.',
+                'created_at' => '2022-10-26 10:09:02',
+                'updated_at' => '2022-10-26 10:09:02'
+            )
+        );
 
-          Room::create($rooms[0]);
-          Room::create($rooms[1]);
-          Room::create($rooms[2]);
-          Room::create($rooms[3]);
-          Room::create($rooms[4]);
-          Room::create($rooms[5]);
-          Room::create($rooms[6]);
-          Room::create($rooms[7]);
-          Room::create($rooms[8]);
-          Room::create($rooms[9]);
-          Room::create($rooms[10]);
-          Room::create($rooms[11]);
-          Room::create($rooms[12]);
-          Room::create($rooms[13]);
-          Room::create($rooms[14]);
-          Room::create($rooms[15]);
-          Room::create($rooms[16]);
-          Room::create($rooms[17]);
-          Room::create($rooms[18]);
-          Room::create($rooms[19]);
-
-
+        Room::create($rooms[0]);
+        Room::create($rooms[1]);
+        Room::create($rooms[2]);
+        Room::create($rooms[3]);
+        Room::create($rooms[4]);
+        Room::create($rooms[5]);
+        Room::create($rooms[6]);
+        Room::create($rooms[7]);
+        Room::create($rooms[8]);
+        Room::create($rooms[9]);
+        Room::create($rooms[10]);
+        Room::create($rooms[11]);
+        Room::create($rooms[12]);
+        Room::create($rooms[13]);
+        Room::create($rooms[14]);
+        Room::create($rooms[15]);
+        Room::create($rooms[16]);
+        Room::create($rooms[17]);
+        Room::create($rooms[18]);
+        Room::create($rooms[19]);
     }
 }

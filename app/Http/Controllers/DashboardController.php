@@ -21,6 +21,7 @@ class DashboardController extends Controller
         if (auth()->user()->is_admin == 0) {
             abort(404);
         }
+    
         // Menghitung total harga dari semua pembayaran dengan status "Down Payment"
         $payments = Payment::where('status', 'Down Payment')->get();
         $totalAmount = $payments->sum('price');
@@ -47,8 +48,8 @@ class DashboardController extends Controller
         $currentMonthNumber = Carbon::now()->format('m') - 0;
         $previousMonthNumber = $currentMonthNumber - 1;
         $previousMonth = Carbon::createFromDate(null, $previousMonthNumber)->format('M');
-        $transactionCount = Transaction::where('status', 'Reservation')->count();
-        $countPreviousMonth = $count["Jul"];
+        $transactionCount = Transaction::all()->count();
+        $countPreviousMonth = 2;
         // dd($countPreviousMonth);
         $percentage = $countPreviousMonth > 0 ? ($monthCount / $countPreviousMonth) * 100 : 0;
 
@@ -88,7 +89,7 @@ class DashboardController extends Controller
             $n->read_at = Carbon::now();
             $n->save();
         }
-        Alert::success('Success', 'Notif Telah Terbaca!');
+        Alert::success('Success', 'Notification Read!');
         return redirect('/dashboard/order');
     }
 }

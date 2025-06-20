@@ -24,7 +24,8 @@ class RoomController extends Controller
         if (auth()->user()->is_admin == 0) {
             abort(404);
         }
-        $room = Room::orderBy('id', 'desc')->get();
+        $room = Room::with('images')->orderBy('id', 'desc')->get();
+        // dd($room->images->image);
         $p = Room::get()->count();
         return view('dashboard.room.index', compact('room', 'p'));
     }
@@ -69,7 +70,7 @@ class RoomController extends Controller
             // 'image' => $image
         ]);
 
-        Alert::success('Success', 'Data berhasil ditambahkan');
+        Alert::success('Success', 'Data successfully added');
         return redirect('/dashboard/data/room');
     }
 
@@ -78,7 +79,7 @@ class RoomController extends Controller
         // dd($id);
         $p = Room::FindOrFail($id);
         $p->delete($p);
-        Alert::success('Success', 'Data berhasil dihapus');
+        Alert::success('Success', 'Data deleted successfully');
         return back();
     }
 
@@ -144,7 +145,7 @@ class RoomController extends Controller
             'room_id' => $request->room_id,
             'image' => $image
         ]);
-        Alert::success('Success', 'Foto Telah Ditambahkan');
+        Alert::success('Success', 'Photo Added');
         return back();
     }
 
@@ -158,7 +159,7 @@ class RoomController extends Controller
             unlink($path);
         }
         $image->delete();
-        Alert::success('Success', 'Success gambar berhasil di hapus');
+        Alert::success('Success', 'Success image successfully deleted');
         return back();
     }
 

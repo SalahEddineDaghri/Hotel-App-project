@@ -102,9 +102,9 @@
                                                     <td>{{ $t->check_in->isoFormat('D MMM Y') }}</td>
                                                     <td>{{ $t->check_out->isoFormat('D MMM Y') }}</td>
                                                     <td>{{ $t->check_in->diffindays($t->check_out) }} Day</td>
-                                                    <td>Rp.{{ number_format($t->getTotalPrice()) }}</td>
-                                                    <td>Rp. {{ number_format($t->getTotalPayment()) }}</td>
-                                                    <td>Rp. {{ number_format($t->getTotalPrice() - $t->getTotalPayment()) }}</td>
+                                                    <td>{{ number_format($t->getTotalPrice()) }} MAD</td>
+                                                    <td>{{ number_format($t->getTotalPayment()) }} MAD</td>
+                                                    <td>{{ number_format($t->getTotalPrice() - $t->getTotalPayment()) }} MAD</td>
                                                     <td> @php
                                                         $insufficient = $t->getTotalPrice() - $t->getTotalPayment();
                                                  @endphp

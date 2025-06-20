@@ -1,6 +1,6 @@
 @extends('frontend.inc.main')
 @section('title')
-    <title>DONQUIXOTE | ORDER NOW</title>
+    <title>Bela Hotel | ORDER NOW</title>
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
                     <div class="container">
                         <div class="card-body">
                             <div class="d-flex">
-                                <h4 class="mb-3">Detail Pemesanan</h4>
+                                <h4 class="mb-3">Order Details</h4>
                             </div>
                         </div>
                         <div class="col-md-12" style="margin-bottom:30px">
@@ -43,9 +43,20 @@
                                         <div class="row mb-3">
                                             <label for="room_price" class="col-sm-2 col-form-label">Price / Day</label>
                                             <div class="col-sm-10">
+
+                                                @php
+                                                    $currency = session('currency', 'MAD');
+                                                    $rate = config('currency.rates')[$currency] ?? 1;
+                                                    $price = $room->price * $rate;
+                                                    $symbol = match ($currency) {
+                                                        'USD' => '$',
+                                                        'EUR' => '€',
+                                                        default => 'MAD ',
+                                                    };
+                                                @endphp
                                                 <input type="text" class="form-control" id="room_price" name="room_price"
                                                     placeholder="col-form-label"
-                                                    value="IDR {{ number_format($room->price) }}" disabled>
+                                                    value=" {{ $symbol }}{{ number_format($price, 2) }}" disabled>
                                             </div>
                                         </div>
                                     </div>
@@ -96,7 +107,7 @@
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="total_price"
                                                         name="total_price" placeholder="col-form-label"
-                                                        value="IDR {{ number_format($total) }} " disabled>
+                                                        value="MAD {{ number_format($total) }} " disabled>
                                                     <input type="hidden" name="total_price"
                                                         value="{{ $total }}">
                                                     <input type="hidden" name="price" value="{{ $room->price }}">
@@ -137,6 +148,8 @@
                     </div>
                 </div>
             </div>
+
+
 
 
 

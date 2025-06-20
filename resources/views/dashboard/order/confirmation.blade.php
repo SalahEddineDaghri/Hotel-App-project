@@ -43,7 +43,7 @@
                                     <label for="room_price" class="col-sm-2 col-form-label">Price / Day</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="room_price" name="room_price"
-                                            placeholder="col-form-label" value="IDR {{ number_format($room->price) }}"
+                                            placeholder="col-form-label" value="MAD {{ number_format($room->price) }}"
                                             readonly>
                                     </div>
                                 </div>
@@ -83,32 +83,32 @@
                                         <label for="total_price" class="col-sm-2 col-form-label">Total Price</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="total_price" name="total_price"
-                                                placeholder="col-form-label" value="IDR {{ number_format($total) }} "
+                                                placeholder="col-form-label" value="MAD {{ number_format($total) }} "
                                                 readonly>
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <label for="minimum_dp" class="col-sm-2 col-form-label">Minimum DP</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="minimum_dp" name="minimum_dp"
+                                    {{-- <div class="row mb-3"> --}}
+                                        {{-- <label for="minimum_dp" class="col-sm-2 col-form-label">Minimum DP</label> --}}
+                                        {{-- <div class="col-sm-10"> --}}
+                                            <input type="hidden" class="form-control" id="minimum_dp" name="minimum_dp"
                                                 placeholder="col-form-label"
-                                                value="IDR {{ number_format($downPayment) }} " readonly>
-                                        </div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <label for="downPayment" class="col-sm-2 col-form-label">Payment</label>
-                                        <div class="col-sm-10">
-                                            <input type="text"
+                                                value="MAD {{ number_format($downPayment) }} " readonly>
+                                        {{-- </div> --}}
+                                    {{-- </div> --}}
+                                    {{-- <div class="row mb-3"> --}}
+                                        {{-- <label for="downPayment" class="col-sm-2 col-form-label">Payment</label> --}}
+                                        {{-- <div class="col-sm-10"> --}}
+                                            <input type="hidden"
                                                 class="form-control @error('downPayment') is-invalid @enderror"
                                                 id="downPayment" name="downPayment" placeholder="Input payment here"
-                                                value="{{ old('downPayment') }}">
-                                            @error('downPayment')
-                                                <div class="text-danger mt-1">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
+                                                value="{{ number_format($total) }}">
+                                            {{-- @error('downPayment') --}}
+                                                {{-- <div class="text-danger mt-1"> --}}
+                                                    {{-- {{ $message }} --}}
+                                                {{-- </div> --}}
+                                            {{-- @enderror --}}
+                                        {{-- </div> --}}
+                                    {{-- </div> --}}
                                     <div class="row mb-3">
                                         <div class="col-sm-2"></div>
                                         <div class="col-sm-10" id="showPaymentType"></div>
@@ -207,13 +207,13 @@
         </div>
     </div>
     <script src="/style/js/jquery.js"></script>
-    <script>
+    {{-- <script>
         $('#downPayment').keyup(function() {
             $('#showPaymentType').text('Rp. ' + parseFloat($(this).val(), 10).toFixed(2).replace(
                     /(\d)(?=(\d{3})+\.)/g, "$1.")
                 .toString());
         });
-    </script>
+    </script> --}}
 @endsection
 
 

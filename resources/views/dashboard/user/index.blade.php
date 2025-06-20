@@ -64,17 +64,27 @@
                                     <td>{{ $u->Customer->nik ?? '-' }}</td>
                                     <td>{{ $u->Customer->address ?? '-' }}</td>
                                     <td>
-                                        <div class="d-flex">
-                                            <a href="/dashboard/user/{{ $u->username }}/edit" class="btn btn-success"><i
-                                                    class="fas fa-pen"></i></a>
-                                            <a class="btn btn-danger me-1 ms-1"
-                                                href="/dashboard/user/{{ $u->id }}/delete">
-                                                <i class="fas fa-trash"></i>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <!-- Edit Button -->
+                                            <a href="/dashboard/user/{{ $u->username }}/edit"
+                                                class="btn btn-sm btn-outline-success rounded-pill px-3 py-1 d-flex align-items-center">
+                                                <i class="fas fa-pen fs-6 me-1"></i>
+                                                <span class="d-none d-sm-inline"></span>
                                             </a>
 
-
+                                            <!-- Delete Button -->
+                                            <form action="/dashboard/user/{{ $u->id }}/delete" method="POST"
+                                                onsubmit="return confirm('Are you sure you want to delete this user?')"
+                                                class="m-0">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit"
+                                                    class="btn btn-sm btn-outline-danger rounded-pill px-3 py-1 d-flex align-items-center">
+                                                    <i class="fas fa-trash fs-6 me-1"></i>
+                                                    <span class="d-none d-sm-inline"></span>
+                                                </button>
+                                            </form>
                                         </div>
-
                                     </td>
                                 </tr>
                             @endforeach
@@ -99,6 +109,7 @@
             </div>
         </div>
     </div>
+
     <script type="text/javascript">
         function deleteConfirmation(id) {
             swal({

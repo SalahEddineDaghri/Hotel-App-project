@@ -25,72 +25,79 @@ class OrderController extends Controller
             Alert::error('Please Login First!');
             return redirect('/login');
         }
+
         $stayfrom = Carbon::parse($request->from);
         $stayuntil = Carbon::parse($request->to);
-        $room = Room::where('id', $request->room)->first();
+        $room = Room::findOrFail($request->room);
 
-        $cektransaksi = Transaction::where('room_id', $request->room)->where([['check_in', '<=', $stayfrom], ['check_out', '>=', $stayuntil]])
-            ->orWhere([['check_in', '>=', $stayfrom], ['check_in', '<=', $stayuntil]])
-            ->orWhere([['check_out', '>=', $stayfrom], ['check_out', '<=', $stayuntil]])->get();
-        if ($cektransaksi->count() > 0) {
-            Alert::error('Kamar Tidak Tersedia');
+        $cektransaksi = Transaction::where('room_id', $room->id)
+            ->where(function ($query) use ($stayfrom, $stayuntil) {
+                $query->whereBetween('check_in', [$stayfrom, $stayuntil])
+                    ->orWhereBetween('check_out', [$stayfrom, $stayuntil])
+                    ->orWhere(function ($q) use ($stayfrom, $stayuntil) {
+                        $q->where('check_in', '<=', $stayfrom)
+                            ->where('check_out', '>=', $stayuntil);
+                    });
+            })->exists(); // plus optimisé
+
+        if ($cektransaksi) {
+            Alert::error('Room Not Available');
             return back();
         }
-        if ($request->customer == null) {
-            $auth = Auth()->user()->Customer->id;
-            $customer = Customer::where('id', $auth)->first();
-        } else {
-            $customer = Customer::where('id', $request->customer)->first();
-        }
+
+        $customer = $request->customer
+            ? Customer::findOrFail($request->customer)
+            : auth()->user()->Customer;
 
         $price = $room->price;
-        $dayDifference = $stayfrom->diffindays($stayuntil);
+        $dayDifference = $stayfrom->diffInDays($stayuntil);
         $total = $price * $dayDifference;
-        $paymentmethodnotid = [1];
-        $paymentmet = PaymentMethod::whereNotIn('id', $paymentmethodnotid)->get();
+
+        $paymentmet = PaymentMethod::whereNotIn('id', [1])->get();
 
         return view('frontend.order', compact('customer', 'room', 'stayfrom', 'dayDifference', 'stayuntil', 'total', 'paymentmet'));
     }
 
-    public function order(Request $request)
-    {
-        $rooms = Room::where('id', $request->room)->first();
-        $customers = Customer::where('id', $request->customer)->first();
 
-        //cek transaksi apakah kamar sudah ada booking
-        $stayfrom = Carbon::parse($request->check_in);
-        $stayuntil = Carbon::parse($request->check_out);
-        $cektransaksi = Transaction::where('room_id', $request->room)->where([['check_in', '<=', $stayfrom], ['check_out', '>=', $stayuntil]])
-            ->orWhere([['check_in', '>=', $stayfrom], ['check_in', '<=', $stayuntil]])
-            ->orWhere([['check_out', '>=', $stayfrom], ['check_out', '<=', $stayuntil]])->get();
-        if ($cektransaksi->count() > 0) {
-            Alert::error('Kamar Tidak Tersedia');
-            return back();
-        }
-        // ===========
+    // public function order2(Request $request)
+    // {
+    //     $rooms = Room::where('id', $request->room)->first();
+    //     $customers = Customer::where('id', $request->customer)->first();
+
+    //     //cek transaksi apakah kamar sudah ada booking
+    //     $stayfrom = Carbon::parse($request->check_in);
+    //     $stayuntil = Carbon::parse($request->check_out);
+    //     $cektransaksi = Transaction::where('room_id', $request->room)->where([['check_in', '<=', $stayfrom], ['check_out', '>=', $stayuntil]])
+    //         ->orWhere([['check_in', '>=', $stayfrom], ['check_in', '<=', $stayuntil]])
+    //         ->orWhere([['check_out', '>=', $stayfrom], ['check_out', '<=', $stayuntil]])->get();
+    //     if ($cektransaksi->count() > 0) {
+    //         Alert::error('Room Not Available');
+    //         return back();
+    //     }
+    //     // ===========
 
 
-        if ($customers->nik == null) {
-            Alert::error('Kesalahan Data', 'Mohon Isi Data NIK');
-            return redirect('myaccount');
-        }
+    //     if ($customers->nik == null) {
+    //         Alert::error('Kesalahan Data', 'Please fill in your NIK data');
+    //         return redirect('myaccount');
+    //     }
 
-        $transaction = $this->storetransaction($request, $rooms);
-        $status = 'Pending';
-        $payment = $this->storepayment($request, $transaction, $status);
+    //     $transaction = $this->storetransaction($request, $rooms);
+    //     $status = 'Pending';
+    //     $payment = $this->storepayment($request, $transaction, $status);
 
-        $superAdmins = User::where('is_admin', 1)->get();
+    //     $superAdmins = User::where('is_admin', 1)->get();
 
-        foreach ($superAdmins as $superAdmin) {
-            $message = 'Reservation added by ' . $customers->name;
-            event(new NewReservationEvent($message, $superAdmin));
-            $superAdmin->notify(new NewRoomReservationDownPayment($transaction, $payment));
-        }
-        event(new RefreshDashboardEvent("Someone reserved a room"));
-        $inv = Payment::where('c_id', $request->customer)->orderby('id', 'desc')->first();
-        Alert::success('Thanks!', 'Room ' . $rooms->no . ' Has been reservated' . ' Please Pay now!');
-        return redirect('/bayar/' . $inv->Transaction->id);
-    }
+    //     foreach ($superAdmins as $superAdmin) {
+    //         $message = 'Reservation added by ' . $customers->name;
+    //         event(new NewReservationEvent($message, $superAdmin));
+    //         $superAdmin->notify(new NewRoomReservationDownPayment($transaction, $payment));
+    //     }
+    //     event(new RefreshDashboardEvent("Someone reserved a room"));
+    //     $inv = Payment::where('c_id', $request->customer)->orderby('id', 'desc')->first();
+    //     Alert::success('Thanks!', 'Room ' . $rooms->no . ' Has been reservated' . ' Please Pay now!');
+    //     return redirect('/bayar/' . $inv->Transaction->id);
+    // }
 
     public function invoice($id)
     {
@@ -101,6 +108,74 @@ class OrderController extends Controller
         // dd($p);
         return view('frontend.invoice', compact('p'));
     }
+
+
+    public function order(Request $request)
+    {
+        $room = Room::findOrFail($request->room);
+        $customer = Customer::findOrFail($request->customer);
+        $checkIn = Carbon::parse($request->check_in);
+        $checkOut = Carbon::parse($request->check_out);
+
+        if (!$customer->nik) {
+            Alert::error('Erreur', 'Merci de compléter votre profil.');
+            return redirect('/myaccount');
+        }
+
+        // Check availability
+        $conflict = Transaction::where('room_id', $room->id)
+            ->where(function ($query) use ($checkIn, $checkOut) {
+                $query->whereBetween('check_in', [$checkIn, $checkOut])
+                    ->orWhereBetween('check_out', [$checkIn, $checkOut])
+                    ->orWhere(function ($q) use ($checkIn, $checkOut) {
+                        $q->where('check_in', '<=', $checkIn)->where('check_out', '>=', $checkOut);
+                    });
+            })->exists();
+
+        if ($conflict) {
+            Alert::error('Chambre indisponible', 'Veuillez choisir une autre chambre.');
+            return back();
+        }
+
+        $days = $checkIn->diffInDays($checkOut);
+        $totalPrice = $room->price * $days;
+
+        // Stocker les données dans la session
+        $request->session()->put('reservation_data', [
+            'room_id' => $room->id,
+            'customer_id' => $customer->id,
+            'check_in' => $checkIn->toDateString(),
+            'check_out' => $checkOut->toDateString(),
+            'total_price' => $totalPrice,
+        ]);
+
+        $data = session('reservation_data');
+
+        if (!$data) {
+            return redirect('/')->with('error', 'Les données de réservation sont manquantes.');
+        }
+
+        $room = Room::find($data['room_id']);
+        $customer = Customer::find($data['customer_id']);
+
+        return view('payment.confirmation', compact('data', 'room', 'customer'));
+
+
+        // return view('payment.confirmation', [
+        //     'room' => $room,
+        //     'customer' => $customer,
+        //     'days' => $days,
+        //     'total' => $totalPrice,
+        // ]);
+        // dd( [
+        //     'room' => $room,
+        //     'customer' => $customer,
+        //     'days' => $days,
+        //     'total' => $totalPrice,
+        // ]);
+    }
+
+
 
     public function pembayaran($id)
     {
@@ -130,7 +205,7 @@ class OrderController extends Controller
         $payment->update([
             'image' => $image,
         ]);
-        Alert::success('Pembayaran Berhasil', 'Tunggu Konfirmasi!');
+        Alert::success('Pembayaran Berhasil', 'Wait for Confirmation!');
         return redirect('/history');
     }
 

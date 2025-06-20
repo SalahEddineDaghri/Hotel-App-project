@@ -44,7 +44,7 @@
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="room_price" name="room_price"
                                             placeholder="col-form-label"
-                                            value="IDR {{ number_format($transaction->Room->price) }} " readonly>
+                                            value="MAD {{ number_format($transaction->Room->price) }} " readonly>
                                     </div>
                                 </div>
 
@@ -62,7 +62,7 @@
                                     <label for="total_price" class="col-sm-2 col-form-label">Total Price</label>
                                     <div class="col-sm-10">
                                         <input type="text" id="total_price"
-                                            class="form-control"value="IDR {{ number_format($transaction->getTotalPrice($transaction->room->price, $transaction->check_in, $transaction->check_out)) }}"
+                                            class="form-control"value="MAD {{ number_format($transaction->getTotalPrice($transaction->room->price, $transaction->check_in, $transaction->check_out)) }}"
                                             readonly>
                                     </div>
                                 </div>
@@ -71,7 +71,7 @@
                                     <label for="Paidoff" class="col-sm-2 col-form-label">Paid Off</label>
                                     <div class="col-sm-10">
                                         <input type="text" id="Paidoff"
-                                            class="form-control"value="IDR {{ number_format($transaction->getTotalPayment()) }}"
+                                            class="form-control"value="MAD {{ number_format($transaction->getTotalPayment()) }}"
                                             readonly>
                                     </div>
                                 </div>
@@ -81,7 +81,7 @@
                                     {{-- <div class="col-sm-10"> --}}
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control"
-                                            value="IDR {{ number_Format($transaction->getTotalPrice($transaction->Room->price, $transaction->check_in, $transaction->check_out) - $transaction->getTotalPayment()) }}"
+                                            value="MAD {{ number_Format($transaction->getTotalPrice($transaction->Room->price, $transaction->check_in, $transaction->check_out) - $transaction->getTotalPayment()) }}"
                                             readonly>
                                     </div>
                                     {{-- </div>  --}}
@@ -177,13 +177,13 @@
             </div>
         </div>
         <script src="/style/js/jquery.js"></script>
-        <script>
+        {{-- <script>
             $('#payment').keyup(function() {
                 $('#showPaymentType').text('Rp. ' + parseFloat($(this).val(), 10).toFixed(2).replace(
                         /(\d)(?=(\d{3})+\.)/g, "$1.")
                     .toString());
             });
-        </script>
+        </script> --}}
     @endsection
 
 

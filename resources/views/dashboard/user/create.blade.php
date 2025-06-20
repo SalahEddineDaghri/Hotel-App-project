@@ -10,7 +10,7 @@
                         <div class="container">
                         <div class="card">
                                 <div class="card-header">
-                                  <h4>Tambah data User</h4>
+                                  <h4>Add User data</h4>
                                 </div>
                                 <div class="card-body">
                                     <form action="/dashboard/user/post" method="POST"  enctype="multipart/form-data">
@@ -64,11 +64,11 @@
                                         <div class="row">
 
                                             <div class="col-md-4 mt-3">
-                                                <label for="jk" class="form-label">Jenis kelamin </label>
+                                                <label for="jk" class="form-label">Gender</label>
                                                 <select class="form-select" name="jk" id="jk">
-                                                    <option selected value="?"> Pilih Jenis Kelamin </option>
-                                                    <option value="L">Pria</option>
-                                                    <option value="P">Wanita</option>
+                                                    <option selected value="?"> Select Gender </option>
+                                                    <option value="L">Man</option>
+                                                    <option value="P">Women</option>
                                                   </select>
                                             </div>
                                             <div class="col-md-5 mt-3">

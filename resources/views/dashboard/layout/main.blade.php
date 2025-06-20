@@ -9,7 +9,7 @@
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="/db/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/bs/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="/img/logo.png">
+    <link rel="shortcut icon" href="/img/logo_1.png">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     {{-- <link href="/carousel/carousel.css" rel="stylesheet"> --}}
 

@@ -48,7 +48,7 @@ class TypeController extends Controller
             'info' => $request->info
         ]);
 
-        Alert::success('Success', 'Data berhasil Ditambahkan');
+        Alert::success('Success', 'Data successfully added');
         return redirect('/dashboard/data/type');
     }
 
@@ -66,7 +66,7 @@ class TypeController extends Controller
     public function update(Request $request, $id){
         $p = Type::findOrFail($id);
         $p->update($request->all());
-        Alert::success('Success', 'Data berhasil Diedit');
+        Alert::success('Success', 'Data successfully edited');
         return redirect('/dashboard/data/type');
     }
 
@@ -75,7 +75,7 @@ class TypeController extends Controller
         $p = Type::where('id', $request->id)->first();
         // dd($request->id);
         $p->delete();
-        Alert::success('Success', 'Data berhasil dihapus');
+        Alert::success('Success', 'Data deleted successfully');
         return back();
     }
 }

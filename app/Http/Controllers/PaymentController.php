@@ -58,7 +58,7 @@ class PaymentController extends Controller
             'invoice' => '0' . $request->customer . 'INV' . $count . Str::random(4),
             'status' => "Down Payment"
         ]);
-        Alert::success('Success', 'Pembayaran Berhasil');
+        Alert::success('Success', 'Payment Successful');
         return redirect('/dashboard/order');
     }
 
@@ -81,8 +81,9 @@ class PaymentController extends Controller
                 return back();
             }
         }
+        $p = $pay;
 
-        return view('dashboard.payment.invoice', compact('pay'));
+        return view('dashboard.payment.invoice', compact('p'));
     }
 
     public function confirmation(Request $request)
@@ -91,7 +92,7 @@ class PaymentController extends Controller
         $pay->update([
             'status' => 'Down Payment'
         ]);
-        Alert::success('Success', 'Payment Berhasil Di terima');
+        Alert::success('Success', 'Payment Successfully Received');
         return redirect('/dashboard/order/history-pay');
     }
 
@@ -108,7 +109,7 @@ class PaymentController extends Controller
         ]);
         $transaction = Transaction::findOrFail($pay->Transaction->id);
         $transaction->delete();
-        Alert::success('Success', 'Payment Telah Di tolak');
+        Alert::success('Success', 'Payment Successful');
         return redirect('/dashboard/order/history-pay');
     }
 }

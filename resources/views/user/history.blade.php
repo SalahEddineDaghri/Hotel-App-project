@@ -1,104 +1,72 @@
 @extends('frontend.inc.main')
 @section('title')
-    <title>
-        DONQUIXOTE | HISTORY PEMESANAN</title>
+    <title>DONQUIXOTE | Order History</title>
 @endsection
 
 @section('content')
-    <div class="container " style="margin-top:30px;margin-bottom:310px">
+<section style="background-color: #eee; margin-bottom: 65px; padding-top: 30px;">
+    <div class="container py-5">
         <div class="row">
-            {{-- <table class="table"> --}}
-            <div class="col-lg-1"></div>
-            <div class="col-lg-3">
-                <div class="card mb-4">
+            <!-- User Sidebar -->
+            <div class="col-lg-4">
+                <div class="card mb-4 shadow-sm">
                     <div class="card-body text-center">
-
                         @if ($user->image)
-                            <img alt="avatar" class="rounded-circle img-fluid"
-                                style="width: 150px;"src="{{ asset('storage/' . $user->image) }}">
+                            <img src="{{ asset('storage/' . $user->image) }}" alt="avatar"
+                                class="rounded-circle img-fluid" style="width: 150px; height: 150px;">
                         @else
-                            <img alt="avatar" class="rounded-circle img-fluid"
-                                style="width: 150px;"src="/img/default-user.jpg">
+                            <img src="/img/default-user.jpg" alt="avatar"
+                                class="rounded-circle img-fluid" style="width: 150px; height: 150px;">
                         @endif
-                        <div class="card-body">
-                            <div class="d-flex justify-content-center">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <h5> History Pemesanan </h5>
-                                            <h3> {{ $user->Customer->name }}</h3>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-
-                        </div>
+                        <h3 class="mt-3">{{ $user->Customer->name }}</h3>
+                        <p class="text-muted">Order History</p>
                     </div>
                 </div>
-
             </div>
-            <div class="col-lg-7 col-md-12 px-4">
+
+            <!-- Order History List -->
+            <div class="col-lg-8">
                 @foreach ($his as $h)
-                    <div class="card mb-4 border-0 shadow">
-                        <div class="d-flex g-0 p-3 justify-content-between">
-
-                            <div class="col-md-5 px-lg-3 px-md-3 px-0">
-                                <h5 class="mb-1">#{{ $loop->iteration }} {{ $h->invoice }}</h5>
-                                <div class="guests">
-                                    <h5 class="mb-1"></h5>
-
-                                </div>
-                                <div class="features mb-3 mt-3">
-                                    <h6 class="mb-1">Status @if ($h->status == 'Pending' and $h->image != null)
-                                            <span style="color:red">{{ $h->status }}</span> | Sudah Bayar
-                                        @elseif ($h->status == 'Pending' and $h->image == null)
-                                            <span style="color:red">{{ $h->status }}</span>
+                    <div class="card mb-4 shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between flex-wrap">
+                                <div class="mb-2">
+                                    <h5 class="mb-1">#{{ $loop->iteration }} - {{ $h->invoice }}</h5>
+                                    <p class="mb-2">
+                                        Status:
+                                        @if ($h->status == 'Pending' && $h->image != null)
+                                            <span class="text-danger">{{ $h->status }}</span> | <span class="text-success">Paid</span>
+                                        @elseif ($h->status == 'Pending')
+                                            <span class="text-danger">{{ $h->status }}</span>
                                         @else
-                                            <span style="color:green">{{ $h->status }}</span>
+                                            <span class="text-success">{{ $h->status }}</span>
                                         @endif
-                                    </h6>
-                                    <h6 class="mb-1">Total IDR {{ number_format($h->price) }}</h6>
-
+                                    </p>
+                                    <p class="mb-2">Total: <strong>DH {{ number_format($h->price) }}</strong></p>
+                                    <p class="mb-0 text-muted">Created at: {{ $h->created_at }}</p>
                                 </div>
-
-
-                            </div>
-                            <div class="col-md-3 mt-lg-0 mt-md-0 mt-4 text-center">
-                                <h6 class="mb-4 text-dark"> {{ $h->created_at }} </h6>
-                                @if ($h->status == 'Pending' and $h->image == null)
-                                    <a class="btn btn-sm w-100 btn-danger shadow-none mb-2"
-                                        href="/bayar/{{ $h->id }}">Bayar Sekarang</a>
-                                    <a class="btn btn-sm w-100 btn-secondary shadow-none"
-                                        style="pointer-events: none;
-                        cursor: default;"
-                                        href="/invoice/{{ $h->id }}">Lihat Invoice</a>
-                                @elseif ($h->status == 'Pending' and $h->image != null)
-                                    <a class="btn btn-sm w-100 btn-danger shadow-none mb-2"
-                                        href="/bayar/{{ $h->id }}"
-                                        style="pointer-events: none;
-                            cursor: default;">Tunggu
-                                        Konfirmasi</a>
-                                    <a class="btn btn-sm w-100 btn-secondary shadow-none"
-                                        style="pointer-events: none;
-                        cursor: default;"
-                                        href="/invoice/{{ $h->id }}">Lihat Invoice</a>
-                                @else
-                                    <a class="btn btn-sm w-100 btn-dark shadow-none"
-                                        href="/invoice/{{ $h->id }}">Lihat Invoice</a>
-                                @endif
-
-
-                                {{-- <a href="/rooms/" class="btn btn-sm w-100 btn-dark shadow-none">More details</a> --}}
-
+                                <div class="d-flex flex-column justify-content-start text-end">
+                                    @if ($h->status == 'Pending' && $h->image == null)
+                                        <a href="/bayar/{{ $h->id }}" class="btn btn-sm btn-danger mb-2">Pay Now</a>
+                                        <button class="btn btn-sm btn-secondary" disabled>View Invoice</button>
+                                    @elseif ($h->status == 'Pending' && $h->image != null)
+                                        <button class="btn btn-sm btn-warning mb-2" disabled>Waiting Confirmation</button>
+                                        <button class="btn btn-sm btn-secondary" disabled>View Invoice</button>
+                                    @else
+                                        <a href="/invoice/{{ $h->id }}" class="btn btn-sm btn-dark">View Invoice</a>
+                                    @endif
+                                </div>
                             </div>
                         </div>
-
                     </div>
                 @endforeach
-                {!! $his->links() !!}
+
+                <!-- Pagination -->
+                <div class="d-flex justify-content-center mt-4">
+                    {!! $his->links() !!}
+                </div>
             </div>
-
-
         </div>
     </div>
+</section>
 @endsection

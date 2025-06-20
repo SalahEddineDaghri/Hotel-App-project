@@ -6,7 +6,7 @@
     {{-- < Page Heading --> --}}
     <div class="container-fluid">
         <h1 class="h3 mb-2 text-gray-800">Data Transactions Active</h1>
-        <p class="mb-4">Semua data transaction yang akan mendatang atau aktif</p>
+        <p class="mb-4">All upcoming or active transaction data</p>
         <div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -41,7 +41,7 @@
                         <a class="btn btn-sm btn-white" href="#" data-toggle="modal" data-target="#modal">
                             <i class="fas fa-plus"></i>
                         </a>
-                        <a href="order/history" class="btn btn-sm btn-white ms-1 "><i class="fa fa-history"></i></a>
+                        {{-- <a href="order/history" class="btn btn-sm btn-white ms-1 "><i class="fa fa-history"></i></a> --}}
                         <a href="order/history-pay" class="btn btn-sm btn-white ms-1 "><i
                                 class="fas fa-money-bill-wave"></i></a>
                     </div>
@@ -74,13 +74,14 @@
                                     <td>{{ $t->check_in->isoFormat('D MMM Y') }}</td>
                                     <td>{{ $t->check_out->isoFormat('D MMM Y') }}</td>
                                     <td>{{ $t->check_in->diffindays($t->check_out) }} Day</td>
-                                    <td>Rp.{{ number_format($t->getTotalPrice()) }}</td>
-                                    <td>Rp. {{ number_format($t->getTotalPayment()) }}</td>
-                                    <td>Rp. {{ number_format($t->getTotalPrice() - $t->getTotalPayment()) }}</td>
+                                    <td>{{ number_format($t->getTotalPrice()) }} MAD</td>
+                                    <td>{{ number_format($t->getTotalPayment()) }} MAD</td>
+                                    <td>{{ number_format($t->getTotalPrice() - $t->getTotalPayment()) }} MAD</td>
                                     <td>
                                         @php
                                             $insufficient = $t->getTotalPrice() - $t->getTotalPayment();
                                         @endphp
+                                        {{-- {{dd($insufficient)}} --}}
                                         <a @if ($insufficient <= 0) style="pointer-events: none;
                                                         cursor: default;color:gray" @endif
                                             href="/dashboard/order/{{ $t->id }}/pay-debt"><i

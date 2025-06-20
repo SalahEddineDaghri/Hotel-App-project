@@ -1,7 +1,11 @@
 @extends('dashboard.layout.main')
 @section('title')
-    <title>Dashboard | Kamar</title>
+    <title>
+        Dashboard | Like</title>
 @endsection
+<!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 @section('content')
     <!-- Page Heading -->
     <div class="container">
@@ -36,7 +40,8 @@
                                 <th width="5%">Id</th>
                                 <th>No</th>
                                 <th>Type</th>
-                                <th>Status</th>
+                                <th>image</th>
+                                {{-- <th>Status</th> --}}
                                 <th>Capacity</th>
                                 <th>Price/day</th>
                                 <th>Action</th>
@@ -46,52 +51,104 @@
                             @php
                                 $no = 1;
                             @endphp
+                            {{-- {{dd($room)}} --}}
+
                             @foreach ($room as $r)
                                 <tr>
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $r->id }}</td>
                                     <td>{{ $r->no }}</td>
                                     <td>{{ $r->type->name }}</td>
-                                    <td>{{ $r->status->name }}</td>
+
+                                    <td>
+                                        @if ($r->images->count() > 0)
+                                            {{-- صورة مصغرة مع فتـح المودال --}}
+                                            <a href="#" data-toggle="modal"
+                                                data-target="#roomModal{{ $r->id }}">
+                                                <img src="/storage/{{ $r->images->first()->image }}" alt="Room Image"
+                                                    style="width: 80px; height: 60px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+                                            </a>
+
+                                            {{-- Modal مع Carousel --}}
+                                            <div class="modal fade" id="roomModal{{ $r->id }}" tabindex="-1"
+                                                role="dialog" aria-labelledby="modalLabel{{ $r->id }}"
+                                                aria-hidden="true">
+                                                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">صور الغرفة رقم {{ $r->no }}</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body p-0">
+                                                            <div id="carouselRoom{{ $r->id }}"
+                                                                class="carousel slide" data-ride="carousel">
+                                                                <div class="carousel-inner">
+                                                                    @foreach ($r->images as $index => $img)
+                                                                        {{-- {{dd($img->image )}} --}}
+                                                                        <div
+                                                                            class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                                                            <img src="/storage/{{ $img->image }}"
+                                                                                class="d-block w-100"
+                                                                                style="height: 400px; object-fit: cover;"
+                                                                                alt="Room Image">
+                                                                        </div>
+                                                                    @endforeach
+                                                                </div>
+                                                                @if ($r->images->count() > 1)
+                                                                    <a class="carousel-control-prev"
+                                                                        href="#carouselRoom{{ $r->id }}"
+                                                                        role="button" data-slide="prev">
+                                                                        <span class="carousel-control-prev-icon"
+                                                                            aria-hidden="true"></span>
+                                                                        <span class="sr-only">Previous</span>
+                                                                    </a>
+                                                                    <a class="carousel-control-next"
+                                                                        href="#carouselRoom{{ $r->id }}"
+                                                                        role="button" data-slide="next">
+                                                                        <span class="carousel-control-next-icon"
+                                                                            aria-hidden="true"></span>
+                                                                        <span class="sr-only">Next</span>
+                                                                    </a>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @else
+                                            <span class="text-muted">No image</span>
+                                        @endif
+                                    </td>
+
+
+
+
+                                    {{-- <td>{{ $r->status->name }}</td> --}}
                                     <td>{{ $r->capacity }}</td>
-                                    <td>Rp.{{ number_format($r->price) }}</td>
+                                    <td>{{ number_format($r->price) }} MAD</td>
+
                                     <td class="d-flex">
                                         <a href="room/{{ $r->id }}/edit" class="btn btn-success me-1"><i
                                                 class="fas fa-pen"></i></a>
-                                        <a class="btn btn-danger me-1" href="#" data-toggle="modal"
-                                            data-target="#deletemodal">
+
+
+                                        <a href="#" class="btn btn-danger me-1" data-bs-toggle="modal"
+                                            data-bs-target="#confirmDeleteModal" data-id="{{ $r->id  }}">
                                             <i class="fas fa-trash"></i>
                                         </a>
+
+
                                         <a href="/dashboard/data/room/{{ $r->no }}"
-                                            class="btn btn-warning text-light me-1"><i class="fas fa-eye"></i></i></i> </a>
+                                            class="btn btn-warning text-light me-1">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
                                     </td>
                                 </tr>
-                                <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Are you sure to delete this
-                                                    data?</h5>
-                                                <button class="close" type="button" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">×</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">Select "Delete" below if you are ready to delete.</div>
-                                            <div class="modal-footer">
-                                                <button class="btn btn-secondary" type="button"
-                                                    data-dismiss="modal">Cancel</button>
-                                                <form action="/dashboard/data/room/{{ $r->id }}/delete"
-                                                    method="post">
-                                                    @csrf
-                                                    <button class="btn btn-danger me-1" type="submit">Delete</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             @endforeach
+
                         </tbody>
                         <tfoot class="table-secondary">
                             <tr>
@@ -99,7 +156,8 @@
                                 <th>Id</th>
                                 <th>No</th>
                                 <th>Type</th>
-                                <th>Status</th>
+                                <th>image</th>
+                                {{-- <th>Status</th> --}}
                                 <th>Capacity</th>
                                 <th>Price/day</th>
                                 <th width="14%">Action</th>
@@ -109,6 +167,44 @@
                 </div>
             </div>
         </div>
+       <!-- Delete Confirmation Modal -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Deletion</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this room? This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <a id="confirmDeleteBtn" href="#" class="btn btn-danger">Yes, Delete</a>
+            </div>
+        </div>
     </div>
+</div>
+
+
+    </div>
+   <script>
+    const confirmDeleteModal = document.getElementById('confirmDeleteModal');
+    const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+
+    confirmDeleteModal.addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget;
+        const roomId = button.getAttribute('data-id');
+        const deleteUrl = `/dashboard/data/room/${roomId}/delete`;
+
+        confirmDeleteBtn.setAttribute('href', deleteUrl);
+    });
+</script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 @endsection
 <!-- End of Main Content -->

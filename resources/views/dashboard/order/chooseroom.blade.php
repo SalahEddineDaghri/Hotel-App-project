@@ -99,7 +99,10 @@
                                 </h3>
                             @endforelse
                         </div>
-
+                        {{-- Pagination links --}}
+                        <div class="mt-3">
+                            {{ $rooms->links() }}
+                        </div>
                     </div>
                 </div>
             </div>

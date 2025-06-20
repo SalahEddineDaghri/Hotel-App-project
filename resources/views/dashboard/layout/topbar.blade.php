@@ -67,6 +67,38 @@
                                 $parturl = explode('pay/', $url);
                                 $idpay = trim($parturl[1]);
                                 $pay = App\Models\Payment::where('id', $idpay)->first();
+
+                                $message = json_decode($n->data)->message;
+                                $partmessage = explode('.', $message);
+                                $datatrim = trim($partmessage[0]);
+
+                                if ($pay && $pay->Transaction) {
+                                    $checkin = Carbon\Carbon::parse($pay->Transaction->check_in)->format('d M Y');
+                                    $checkout = Carbon\Carbon::parse($pay->Transaction->check_out)->format('d M Y');
+                                    $total = $pay->price;
+                                    $invoice = $pay->invoice;
+                                }
+                            @endphp
+
+                            {{-- @if ($pay->status == 'Pending')
+                                <span class="font-weight-bold">{{ $datatrim }}</span>
+                            @else
+                                <span class="font-weight-bold">{{ $message }}</span>
+                            @endif
+                            <div class="small text-gray-500">|Invoice {{ $invoice }} | Total IDR
+                                {{ number_format($total) }} | {{ $checkin }} -
+                                {{ $checkout }}|</div>
+                        </div> --}}
+
+
+                         {{-- <div>
+                            <div class="small text-gray-500">{{ $n->created_at->diffforhumans() }},
+                                {{ $n->created_at->isoformat('MMM D, Y') }}</div>
+                            @php
+                                $url = json_decode($n->data)->url;
+                                $parturl = explode('pay/', $url);
+                                $idpay = trim($parturl[1]);
+                                $pay = App\Models\Payment::where('id', $idpay)->first();
                                 
                                 $message = json_decode($n->data)->message;
                                 $partmessage = explode('.', $message);
@@ -84,7 +116,7 @@
                             <div class="small text-gray-500">|Invoice {{ $invoice }} | Total IDR
                                 {{ number_format($total) }} | {{ $checkin }} -
                                 {{ $checkout }}|</div>
-                        </div>
+                        </div> --}}
                     </button>
                 </form>
             @endforeach

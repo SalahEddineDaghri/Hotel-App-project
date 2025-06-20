@@ -39,7 +39,7 @@
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                         Earnings {{ Carbon\Carbon::now()->isoformat('MMMM') }} (Monthly)</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">IDR {{ number_format($monthCount) }}
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">MAD {{ number_format($monthCount) }}
                                     </div>
                                 </div>
                                 <div class="col-auto">
@@ -58,7 +58,7 @@
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                         Earnings (All Time)</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">IDR
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">MAD
                                         {{ number_format($totalAmount) }}</div>
                                 </div>
                                 <div class="col-auto">

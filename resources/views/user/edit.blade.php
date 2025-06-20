@@ -41,7 +41,7 @@
               <div class="d-flex justify-content-center mb-2">
                   <a href="/myaccount" class="btn btn-primary">Back</a>
                 @if (!$user->image == null)
-                <a href="/myaccount/{{$user->id}}/delete-foto" class="btn btn-danger ms-2">Hapus Foto</a>
+                <a href="/myaccount/{{$user->id}}/delete-foto" class="btn btn-danger ms-2">Delete Photo</a>
                 @endif
 
               </div>
@@ -57,7 +57,7 @@
                 </div>
               <div class="d-flex">
                   <h4>@if ($user->image == null)
-                Tambah
+                Add
                 @else
                 Edit
                   @endif Foto <span class="fst-italic">(Max 5mb)</span></h4>
@@ -69,7 +69,7 @@
                         <label for="bukti" class="mb-2"></label>
                         <input type="hidden" name="id" value="{{ $user->id }}">
                         <input type="file" class="form-control mb-3" required name="image" id="bukti">
-                        <button class="btn btn-primary justify-content-end" type="submit">Kirim</button>
+                        <button class="btn btn-primary justify-content-end" type="submit">Send</button>
                     </form>
                 </div>
               </div>

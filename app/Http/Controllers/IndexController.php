@@ -26,32 +26,40 @@ class IndexController extends Controller
         // dd($uri);
         return view('pesan', compact('uri'));
     }
+
     public function room(Request $request)
     {
-        // dd($request->all());
-        if (!empty($request->from or $request->count)) {
-            $stayfrom = Carbon::parse($request->from)->isoFormat('D MMM YYYY');
-            $stayto = Carbon::parse($request->to)->isoFormat('D MMM YYYY');
-            // dd($request->all());
-            if ($request->from and $request->to and $request->count != null) {
-                $occupiedRoomId = $this->getOccupiedRoomID($request->from, $request->to);
-                $rooms = $this->getUnocuppiedroom($request, $occupiedRoomId);
-                $roomsCount = $this->countUnocuppiedroom($request, $occupiedRoomId);
-            } elseif ($request->count != null) {
-                $rooms = $this->getUnocuppiedroom2($request);
-                $roomsCount = $this->countUnocuppiedroom2($request);
-            } else {
-                $occupiedRoomId = $this->getOccupiedRoomID($request->from, $request->to);
-                $rooms = $this->getUnocuppiedroom($request, $occupiedRoomId);
-                $roomsCount = $this->countUnocuppiedroom($request, $occupiedRoomId);
+        $roomsCount = 0;
+
+        // Initialisation de la requête
+        $roomsQuery = Room::with(['type', 'status']);
+
+        if ($request->filled('from') && $request->filled('to')) {
+            // Récupère les IDs des chambres déjà réservées
+            $occupiedRoomIds = $this->getOccupiedRoomIDs($request->from, $request->to);
+
+            // Exclure les chambres occupées
+            $roomsQuery->whereNotIn('id', $occupiedRoomIds);
+
+            // Filtrer par capacité si 'adults' ou 'count' est fourni
+            $requiredCapacity = $request->input('adults') ?? $request->input('count');
+            if (!empty($requiredCapacity)) {
+                $roomsQuery->where('capacity', '>=', $requiredCapacity);
             }
+
+            // Paginer les résultats
+            $rooms = $roomsQuery->orderBy('capacity')->paginate(10)->appends($request->all());
+            $roomsCount = $rooms->total();
         } else {
-            $rooms = Room::paginate(20);
-            $roomsCount = Room::count();
+            // Si aucune date n'est fournie, on retourne toutes les chambres
+            $rooms = $roomsQuery->paginate(12);
+            $roomsCount = $rooms->total();
         }
 
         return view('frontend.rooms', compact('rooms', 'roomsCount', 'request'));
     }
+
+
 
     public function facility()
     {
@@ -72,19 +80,20 @@ class IndexController extends Controller
 
 
 
-    private function getUnocuppiedroom($request, $occupiedRoomId)
+    private function getOccupiedRoomIDs($from, $to)
     {
-        if ($request->count != null) {
-            $rooms = Room::with('type', 'status')->where('capacity', '>=', $request->count)->whereNotIn('id', $occupiedRoomId);
-        } else {
-            $rooms = Room::with('type', 'status')->whereNotIn('id', $occupiedRoomId);
-        }
-        $rooms = $rooms
-            ->orderBy('capacity')
-            ->paginate(10);
-
-        return $rooms;
+        return Transaction::where(function ($query) use ($from, $to) {
+            $query->whereBetween('check_in', [$from, $to])
+                ->orWhereBetween('check_out', [$from, $to])
+                ->orWhere(function ($q) use ($from, $to) {
+                    $q->where('check_in', '<=', $from)
+                        ->where('check_out', '>=', $to);
+                });
+        })->pluck('room_id')->toArray();
     }
+
+
+
     private function getUnocuppiedroom2($request)
     {
         $rooms = Room::with('type', 'status')->where('capacity', '>=', $request->count);

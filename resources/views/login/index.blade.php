@@ -1,73 +1,178 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>DONQUIXOTE | LOGIN</title>
-	<link rel="stylesheet" type="text/css" href="/loginn/css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
-	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
-    <link rel="stylesheet" href="/bs/css/bootstrap.min.css">
+    <meta charset="UTF-8" />
+    <title>Login | Bela Hotel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('/images/bg-login.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+        .form-control {
+            background-color: #222;
+            color: #eee;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 15px;
+        }
+
+        .form-control::placeholder {
+            color: #bbb;
+        }
+
+        .form-control:focus {
+            background-color: #333;
+            box-shadow: 0 0 8px #0d6efd;
+            color: #fff;
+        }
+
+        .social-btn {
+            background-color: #222;
+            border: 1px solid #444;
+            color: white;
+            padding-left: 45px;
+            position: relative;
+            border-radius: 8px;
+            font-weight: 600;
+            height: 48px;
+            line-height: 48px;
+            text-align: left;
+            display: block;
+            width: 100%;
+            margin-bottom: 14px;
+        }
+
+        .social-btn i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.25rem;
+        }
+
+        .text-link {
+            color: #0d6efd;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .text-link:hover {
+            text-decoration: underline;
+        }
+
+        .btn-join {
+            background-color: #0d6efd;
+            color: white;
+            border-radius: 30px;
+            padding: 10px 30px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-join:hover {
+            background-color: #0a53be;
+        }
+
+        .login-card {
+            background-color: rgba(0, 0, 0, 0.92);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+        }
+
+        footer {
+            background-color: #111;
+            color: #aaa;
+            font-size: 14px;
+        }
+    </style>
 </head>
-<body>
-    @if (session()->has('loginError'))
 
-    <div class="alert alert-danger alert-dismissible fade show" role="alert"> {{session('loginError')}}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
-    </div>
+<body class="d-flex flex-column min-vh-100">
 
-    @endif
-    @if (session()->has('asking'))
+    <div class="container my-auto py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="row login-card">
+                    <!-- Left Side -->
+                    <div class="col-md-6 p-5">
+                        <h3 class="mb-4">Enhance your experience with every new booking</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">Best price guaranteed</li>
+                            <li class="mb-2">More stays, more savings</li>
+                            <li class="mb-2">Exclusive experiences</li>
+                            <li class="mb-2">Booking flexibility</li>
+                        </ul>
+                        <div class="mt-4">
+                            <p><strong>Don't have a Bela Hotel account?</strong></p>
+                            <a href="/register" class="btn-join">Join for free</a>
+                        </div>
+                    </div>
 
-    <div class="alert alert-success alert-dismissible fade show" style="z-index: 1000" role="alert"> {{session('asking')}}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
-    </div>
+                    <!-- Right Side -->
+                    <div class="col-md-6 p-5 border-start border-secondary">
+                        <h4 class="mb-4 text-uppercase" style="letter-spacing: 1px;">Login</h4>
 
-    @endif
+                        <a href="#" class="social-btn"><i class="fab fa-google"></i> With Google</a>
 
-    @if (session()->has('success'))
+                        <div class="text-center my-3" style="font-weight: 500; font-size: 0.95rem;">
+                            Or log in with your user
+                        </div>
 
-    <div class="alert alert-success alert-dismissible fade show" role="alert"> {{session('success')}}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
-    </div>
+                        <form action="/login" method="POST">
+                            @csrf
+                            <div class="mb-3">
+                                <input type="text" name="email" value="{{ Cookie::get('email') }}" class="form-control" placeholder="Enter your email"
+                                    required
+                                    @if (Cookie::has('email')) value="{{ Cookie::get('email') }}" @endif>
+                                @if (session('email_error'))
+                                    <div class="text-danger small mb-2">{{ session('email_error') }}</div>
+                                @endif
+                                @error('email')
+                                    <div class="text-danger small mb-2">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" name="password" class="form-control"
+                                    placeholder="Enter your password" required
+                                    @if (Cookie::has('password')) value="{{ Cookie::get('password') }}" @endif>
+                                @if (session('password_error'))
+                                    <div class="text-danger small mb-2">{{ session('password_error') }}</div>
+                                @endif
+                                @error('password')
+                                    <div class="text-danger small mb-2">{{ $message }}</div>
+                                @enderror
+                            </div>
 
-    @endif
+                            <button type="submit" class="btn btn-primary w-100 mt-2">ACCESS TO BELA HOTEL</button>
+                            <div class="text-end mt-2">
+                                <a href="/forgot-password" class="text-link">Did you forget your password?</a>
+                            </div>
+                        </form>
 
-	<img class="wave" src="/loginn/img/wave.png">
-	<div class="container">
-		<div class="img">
-			<img src="/loginn/img/bg.svg">
-		</div>
-		<div class="login-content">
-			<form action="/login" method="post">
-                @csrf
-				<img src="/loginn/img/avatar.svg">
-				<h2 class="title">Login</h2>
-           		<div class="input-div one">
-           		   <div class="i">
-           		   		<i class="fas fa-user"></i>
-           		   </div>
-           		   <div class="div">
-           		   		<input type="username" name="username" id="username" required autofocus @if(Cookie::has('username')) value="{{ Cookie::get('username') }}" @endif class="input" placeholder="Username">
-           		   </div>
-           		</div>
-           		<div class="input-div pass">
-           		   <div class="i">
-           		    	<i class="fas fa-lock"></i>
-           		   </div>
-           		   <div class="div">
-           		    	<input type="password" name="password" id="password" required class="input" placeholder="Password" @if(Cookie::has('password')) value="{{ Cookie::get('password') }}" @endif>
-            	   </div>
-            	</div>
-                <div class="form-group text-end">
-                    <label for="remember"> Remember me</label>
-                    <input type="checkbox" @if(Cookie::has('username')) checked @endif   name="remember" value="1">
+                    </div>
                 </div>
-            	<a href="/register" class="nav-link">Register?</a>
-            	<input type="submit" class="btn" value="login">
-            </form>
+            </div>
         </div>
     </div>
-    <script type="text/javascript" src="/loginn/js/main.js"></script>
-    <script src="/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Footer fixed at bottom -->
+    <footer class="text-center py-4 mt-auto">
+        <div class="container">
+            <p class="mb-0">&copy; {{ date('Y') }} Bela Hotel Hotels & Resorts. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     @include('sweetalert::alert')
 </body>
+
 </html>

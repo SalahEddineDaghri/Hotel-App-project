@@ -127,7 +127,7 @@ class TransactionController extends Controller
         $uri = Route::currentroutename();
         $stayfrom = Carbon::parse($request->from)->isoFormat('D MMM YYYY');
         $stayto = Carbon::parse($request->to)->isoFormat('D MMM YYYY');
-        $occupiedRoomId = $this->getOccupiedRoomID($request->from, $request->to);
+        $occupiedRoomId = $this->getOccupiedRoomID_2($request->from, $request->to);
         $rooms = $this->getUnocuppiedroom($request, $occupiedRoomId);
         $roomsCount = $this->countUnocuppiedroom($request, $occupiedRoomId);
         $customer = Customer::where('id', $request->c_id)->first();
@@ -158,9 +158,9 @@ class TransactionController extends Controller
         $rooms = Room::where('id', $request->room)->first();
         $customers = Customer::where('id', $request->customer)->first();
         $minimumDownPayment = ($rooms->price * $dayDifference) * 0.5;
-        $request->validate([
-            'downPayment' => 'required|numeric|gte:' . $minimumDownPayment
-        ]);
+        // $request->validate([
+        //     'downPayment' => 'required|numeric|gte:' . $minimumDownPayment
+        // ]);
 
         $occupiedRoomId = $this->getOccupiedRoomID($request->check_in, $request->check_out);
         $occupiedRoomIdInArray = $occupiedRoomId->toArray();
@@ -176,13 +176,13 @@ class TransactionController extends Controller
 
         $superAdmins = User::where('is_admin', 1)->get();
 
-        foreach ($superAdmins as $superAdmin) {
-            $message = 'Reservation added by ' . $customers->name;
-            event(new NewReservationEvent($message, $superAdmin));
-            $superAdmin->notify(new NewRoomReservationDownPayment($transaction, $payment));
-        }
+        // foreach ($superAdmins as $superAdmin) {
+        //     $message = 'Reservation added by ' . $customers->name;
+        //     event(new NewReservationEvent($message, $superAdmin));
+        //     $superAdmin->notify(new NewRoomReservationDownPayment($transaction, $payment));
+        // }
 
-        event(new RefreshDashboardEvent("Someone reserved a room"));
+        // event(new RefreshDashboardEvent("Someone reserved a room"));
         Alert::success('Success', 'Room ' . $rooms->no . ' Has been reservated by ' . $customers->name);
         return redirect()->route('transaction.index');
     }
@@ -224,14 +224,18 @@ class TransactionController extends Controller
 
     private function getUnocuppiedroom($request, $occupiedRoomId)
     {
+        $count = (int) $request->count;
+        $occupiedRoomId = is_array($occupiedRoomId) ? $occupiedRoomId : [];
+
         $rooms = Room::with('type', 'status')
-            ->where('capacity', '>=', $request->count)
-            ->whereNotIn('id', $occupiedRoomId);
+            ->where('capacity', '>=', $count)
+            ->whereNotIn('id', $occupiedRoomId)
+            ->paginate(5);
 
         if (!empty($request->sort_name)) {
             $rooms = $rooms->orderBy($request->sort_name, $request->sort_type);
         }
-        return $rooms->get();
+        return $rooms;
     }
 
     private function countUnocuppiedroom($request, $occupiedRoomId)
@@ -251,6 +255,16 @@ class TransactionController extends Controller
             ->orWhere([['check_out', '>=', $stayfrom], ['check_out', '<=', $stayto]])
             ->pluck('room_id');
         return $occupiedRoomId;
+    }
+
+    private function getOccupiedRoomID_2($stayfrom, $stayto)
+    {
+        return Transaction::where(function ($query) use ($stayfrom, $stayto) {
+            $query->where(function ($q) use ($stayfrom, $stayto) {
+                $q->where('check_in', '<', $stayto)
+                    ->where('check_out', '>', $stayfrom);
+            });
+        })->pluck('room_id')->toArray();
     }
 
     private function get($request)

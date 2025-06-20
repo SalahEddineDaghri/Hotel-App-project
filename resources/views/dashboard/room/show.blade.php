@@ -7,7 +7,7 @@
     <div class="container">
         <div class="col-md-6">
             <div class="d-sm-flex align-items-center mb-4">
-            <h1 class="h2 mb-0 text-dark-1000">Kamar {{ $room->no }}</h1>
+            <h1 class="h2 mb-0 text-dark-1000">Room {{ $room->no }}</h1>
             </div>
         </div>
 
@@ -60,7 +60,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <h5><a href="/dashboard/data/room/{{ $room->no }}/add-image" class="btn btn-success">Tambahkan foto</a></h5>
+                    <h5><a href="/dashboard/data/room/{{ $room->no }}/add-image" class="btn btn-success">Add photo</a></h5>
                     </div>
                 </div>
             </div>

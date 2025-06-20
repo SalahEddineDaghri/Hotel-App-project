@@ -10,7 +10,7 @@
                         <div class="container">
                         <div class="card">
                                 <div class="card-header">
-                                  <h4>Edit data Kamar No {{ $p->no }} #{{$p->id}} </h4>
+                                  <h4>Modify room data No {{ $p->no }} #{{$p->id}} </h4>
                                 </div>
                                 <div class="card-body">
                                     <form action="/dashboard/data/room/{{ $p->id }}/update" method="POST"  enctype="multipart/form-data">

@@ -64,21 +64,21 @@
                                             </div>
 
                                             <div class="col-md-4 mt-3">
-                                                <label for="jk" class="form-label">Jenis Kelamin </label>
+                                                <label for="jk" class="form-label">Gender </label>
                                                 <select class="form-select" name="jk" id="jk">
                                                     {{-- <option> --}}
                                                         @if ($user->Customer->jk == '?')
-                                                        <option selected value="?"> Pilih Jenis Kelamin </option>
-                                                        <option value="L">Pria</option>
-                                                        <option value="P">Wanita</option>
+                                                        <option selected value="?"> Select Gender</option>
+                                                        <option value="L">Man</option>
+                                                        <option value="P">Women</option>
                                                         @elseif ($user->Customer->jk == 'P')
-                                                        <option  value="?"> Pilih Jenis Kelamin </option>
-                                                        <option value="L">Pria</option>
-                                                        <option selected value="P">Wanita</option>
+                                                        <option  value="?"> Select Gender </option>
+                                                        <option value="L">Man</option>
+                                                        <option selected value="P">Women</option>
                                                         @elseif($user->Customer->jk == 'L')
-                                                        <option  value="?"> Pilih Jenis Kelamin </option>
-                                                        <option selected value="L">Pria</option>
-                                                        <option  value="P">Wanita</option>
+                                                        <option  value="?"> Select Gender </option>
+                                                        <option selected value="L">Man</option>
+                                                        <option  value="P">Women</option>
                                                         @endif
 
                                                     {{-- </option> --}}

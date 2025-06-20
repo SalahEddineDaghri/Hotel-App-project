@@ -120,7 +120,7 @@ class UserController extends Controller
 
         ]);
 
-        Alert::success('Success', 'Data berhasil di edit');
+        Alert::success('Success', 'Data successfully edited');
         return redirect('/dashboard/user');
     }
     public function updatefront(Request $request, $id){
@@ -168,7 +168,10 @@ class UserController extends Controller
 
         ]);
     }
-        Alert::success('Success', 'Data berhasil di edit');
+    if($p){
+
+        Alert::success('Success', 'Data successfully edited');
+    }
         return redirect('/myaccount');
     }
 
@@ -176,7 +179,7 @@ class UserController extends Controller
         $p = User::findORFail($id);
         // dd($p);
         $p->delete();
-        Alert::success('Success', 'Data berhasil di hapus');
+        Alert::success('Success', 'Data successfully deleted');
         return back();
     }
 
