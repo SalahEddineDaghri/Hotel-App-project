@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+![photo_2025-06-20_21-21-46](https://github.com/user-attachments/assets/07296900-8ff1-40a8-98cf-c1b4831cf34f)![photo_2025-06-20_21-21-46](https://github.com/user-attachments/assets/e51626ac-f504-498a-847a-3f3bb6631eb6)<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -118,14 +118,21 @@ Copy
 Edit
 php artisan serve
 The project should now be running successfully.
+
 <hr>
-Screenshots
+. Screenshots
 
 
-
-
-
-
+![Image](https://github.com/user-attachments/assets/e154c81f-c56f-4118-a00e-782045dbcd67)
+![Image](https://github.com/user-attachments/assets/e63920e3-bb67-439b-831e-3a2fff2c7071)
+![Image](https://github.com/user-attachments/assets/5608bef0-1e38-4088-b4e8-55fd49ad989f)
+![Image](https://github.com/user-attachments/assets/a0dc3871-020e-436f-8f27-ca36dad1a3a1)
+![Image](https://github.com/user-attachments/assets/32eeb1d5-5026-48aa-9279-cc1914fe34bf)
+![Image](https://github.com/user-attachments/assets/4aa48367-dc69-42dc-9ab7-44d602ac3e49)
+![Image](https://github.com/user-attachments/assets/eb9b49aa-9c15-4f5e-a5c2-995298f087ed)
+![Image](https://github.com/user-attachments/assets/b736814a-fb45-456b-b0fc-54dd00d23e99)
+![Image](https://github.com/user-attachments/assets/2c509579-fc8e-4471-bb68-fd202b01b6c2)
+![Image](https://github.com/user-attachments/assets/bfcd1be8-cf68-4928-ae68-b24470cedf44)
 
 
 <hr>
