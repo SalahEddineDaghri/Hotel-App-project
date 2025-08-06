@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<img width="652" height="475" alt="image" src="https://github.com/user-attachments/assets/9033c215-4c7f-47f3-bc45-86b1e4b12b1e" /><p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -123,7 +123,7 @@ The project should now be running successfully.
 . Screenshots
 
 
-<img width="1349" height="636" alt="Image" src="https://github.com/user-attachments/assets/9bd1ae2d-a45c-4bcd-84a0-804d50ccf69b" />
+![Image](https://github.com/user-attachments/assets/5ffb5d0d-4a09-40d6-95f2-d4d8a7e6e83d)
 ![Image](https://github.com/user-attachments/assets/e63920e3-bb67-439b-831e-3a2fff2c7071)
 ![Image](https://github.com/user-attachments/assets/5608bef0-1e38-4088-b4e8-55fd49ad989f)
 ![Image](https://github.com/user-attachments/assets/a0dc3871-020e-436f-8f27-ca36dad1a3a1)
