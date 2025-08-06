@@ -123,7 +123,7 @@ The project should now be running successfully.
 . Screenshots
 
 
-![Image](https://github.com/user-attachments/assets/e154c81f-c56f-4118-a00e-782045dbcd67)
+<img width="1349" height="636" alt="Image" src="https://github.com/user-attachments/assets/9bd1ae2d-a45c-4bcd-84a0-804d50ccf69b" />
 ![Image](https://github.com/user-attachments/assets/e63920e3-bb67-439b-831e-3a2fff2c7071)
 ![Image](https://github.com/user-attachments/assets/5608bef0-1e38-4088-b4e8-55fd49ad989f)
 ![Image](https://github.com/user-attachments/assets/a0dc3871-020e-436f-8f27-ca36dad1a3a1)
